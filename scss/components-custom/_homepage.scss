@@ -3,7 +3,12 @@
 #home-intro {
 	background-color: $gray-darker;
 	background-image: url('../img/sprite_hashes.png');
-	height: calc(100vh -  #{$header-height});
+	@media (min-width: $screen-md-min) {
+		height: calc(100vh -  #{$header-height});
+	}
+	@media (max-width: $screen-sm-max) {
+		height: calc(100vh -  #{$navbar-height-mobile});
+	}
 }
 #home-specialisations {
 	background-color: $orange;
@@ -35,40 +40,34 @@
 
 // Site structure
 // ----------------------------------------------------------------
-@media (min-width: $grid-float-breakpoint) {
+@media (min-width: $screen-md-min) {
 	.site-content {
 		height: calc(100vh);
 	}
-}
 
-@media (max-width: $grid-float-breakpoint) {
-	.site-content {
-		height: calc(100vh -  #{$navbar-height-mobile});
+	.homepage__panel {
+		display: flex;
+		align-items: center;
+	
+		.container {
+			flex: 1 1 auto;
+		}
 	}
 }
 
-.homepage__panel {
-	display: flex;
-    align-items: center;
 
-	.container {
-		flex: 1 1 auto;
-	}
-}
-
+// IE hacks
 @media all and (-ms-high-contrast:none) {
-.homepage__panel { 
-	display: block;  
-	padding-top: 20vh;
-} /* IE10 */
-*::-ms-backdrop, .homepage__panel { 
-	display: block; 
-	padding-top: 20vh;
-} /* IE11 */
+	.homepage__panel { 
+		display: block;  
+		padding-top: 20vh;
+	} /* IE10 */
+	*::-ms-backdrop, .homepage__panel { 
+		display: block; 
+		padding-top: 20vh;
+	} /* IE11 */
 }
 
-
-@media (min-width: $screen-sm-max) {}
 
 @media (max-width: $screen-sm-max) {		
 	.homepage__panel {
@@ -89,7 +88,7 @@
 		font-size: 1.5rem;
 		height: auto;
 		padding: 15px 5px;
-		margin: 0 #{-$grid-gutter-width};
+		margin: 0 #{-$grid-gutter-width/2};
 		text-align: center;
 		margin-bottom: 20px;
 	}
@@ -100,16 +99,12 @@
 
 // Intro
 // ---------------------------------------------
-
 .homepage__panel-intro-wrapper {
-	margin-bottom: 20vh;
-	// height: 40vh;
-	@media (max-width: $screen-sm-max) {		
-		// margin-top: 30vh;
-		// height: 50vh;
-	}
 	@media (max-width: $screen-xs-max) {		
-		// margin-top: 8vh;
+		height: calc(100vh - #{$navbar-height-mobile});
+	}
+	@media (min-width: $screen-sm-min) {		
+		margin-bottom: 20vh;		
 	}
 }
 
@@ -117,6 +112,10 @@
 		font-weight: normal;
 		letter-spacing: 8px;
 		margin-bottom: 3vh;
+		
+		@media (max-width: $screen-sm-max) {		
+			padding-top: 20vh;
+		}
 	}
 
 	
@@ -193,7 +192,6 @@
 			
 // Specialisations 
 // ---------------------------------------------
-
 .specialisations__menu {
 	flex-wrap: wrap;
 	justify-content: center;
@@ -240,64 +238,34 @@
 $sprite-x : 100px;
 $sprite-y : 100px;
 
-.sprite_graphic_design {
-	background-position: $sprite-x * -0 $sprite-y * -0;
-}
-.sprite_multimedia {
-	background-position: $sprite-x * -1 $sprite-y * -0;
-}
-.sprite_copywriting {
-	background-position: $sprite-x * -2 $sprite-y * -0;
-}
-.sprite_game_design {
-	background-position: $sprite-x * -3 $sprite-y * -0;
-}
+.sprite_graphic_design {	background-position: $sprite-x * -0 $sprite-y * -0;}
+.sprite_multimedia {		background-position: $sprite-x * -1 $sprite-y * -0;}
+.sprite_copywriting {		background-position: $sprite-x * -2 $sprite-y * -0;}
+.sprite_game_design {		background-position: $sprite-x * -3 $sprite-y * -0;}
+.sprite_fashion_design {	background-position: $sprite-x * -0 $sprite-y * -1;}
+.sprite_interior_design {	background-position: $sprite-x * -1 $sprite-y * -1;}
+.sprite_digital_marketing {	background-position: $sprite-x * -2 $sprite-y * -1;}
+.sprite_brand_communication {	background-position: $sprite-x * -3 $sprite-y * -1;}
+.sprite_photography {		background-position: $sprite-x * -0 $sprite-y * -2;}
+.sprite_brand_management {	background-position: $sprite-x * -01 $sprite-y * -2;}
 
 
-.sprite_fashion_design {
-	background-position: $sprite-x * -0 $sprite-y * -1;
-}
-.sprite_interior_design {
-	background-position: $sprite-x * -1 $sprite-y * -1;
-}
-.sprite_digital_marketing {
-	background-position: $sprite-x * -2 $sprite-y * -1;
-}
-.sprite_brand_communication {
-	background-position: $sprite-x * -3 $sprite-y * -1;
-}
 
-.sprite_photography {
-	background-position: $sprite-x * -0 $sprite-y * -2;
-}
-.sprite_brand_management {
-	background-position: $sprite-x * -01 $sprite-y * -2;
-}
 
 
 // Brand Challenge
 // ---------------------------------------------
-@media (min-width: $screen-md-min) { 
-	// .is-animated .hompage__panel-title-brand-challenge {
-	// 	transform: translateX(-54px);
-	// }
-}
+@media (min-width: $screen-md-min) {}
 @media (max-width: $screen-sm-max) { 
-	// .is-animated .hompage__panel-title-brand-challenge {
-	// 	margin-top: -2rem;
-	// }
 	.xs-grid-pull {
-		margin: 0 #{-$grid-gutter-width}; 
+		margin: 0 #{-$grid-gutter-width / 2}; 
 	}
-
 	.carousel__brand-challenge {
 		padding: 0 50px;
-
 		.slick-slide {
 			background: $white;
 		}
 	}
-
 }
 
 @media (min-width: $screen-xs-max) { 
@@ -309,271 +277,10 @@ $sprite-y : 100px;
 	}
 }
 
-
-
-
-// Animation
-// ---------------------------------------------
-.homepage__panel-campuses-title-wrapper {}
-.hompage__panel-title-campuses {}	
-.title_slice {					display: block;	}
-.title_slice_inline {			display: inline-block;	}
-.title_slice_wrapper {			font-size: 0;	}
-
-// Position some of the te/xt so that it reads text
-.slice_translate-left {			transform: translateX(-$grid-gutter-width);	}
-.slice_translate-right {		transform: translateX($grid-gutter-width);}
-
-
-[data-animation] {
-	transition: all 800ms $transition;
-}
-
-
-.js {	
-	// Brand challenge
-	[data-animation=brand-challenge-banner],
-	[data-animation=brand-challenge-title],
-	[data-animation=brand-challenge-intro],
-	[data-animation=brand-challenge-news-1],
-	[data-animation=brand-challenge-news-2],
-	[data-animation=brand-challenge-news-3],
-	[data-animation=brand-challenge-news-4]  {
-		opacity: 0;
-	}
-	[data-animation=brand-challenge-banner] {
-		transform: translateX(-100px);
-	}
-	[data-animation=brand-challenge-title] {}	
-	[data-animation=brand-challenge-intro] {
-		transform: translateX(100px);
-	}
-	
-	[data-animation=brand-challenge-news-1],
-	[data-animation=brand-challenge-news-2],
-	[data-animation=brand-challenge-news-3],
-	[data-animation=brand-challenge-news-4] {
-		transform: translateY(100px)
-	}
-	
-	[data-animation=brand-challenge-news-1] {transition-delay: 100ms;}
-	[data-animation=brand-challenge-news-2] {transition-delay: 200ms;}
-	[data-animation=brand-challenge-news-3] {transition-delay: 300ms;}
-	[data-animation=brand-challenge-news-4] {transition-delay: 400ms;}
-
-	
-	// Students and Alumni
-	[data-animation=alu],
-	[data-animation=mni],
-	[data-animation=stude],
-	[data-animation=ntlife] {
-		opacity: 0;
-	}
-}
-
-.is-animated {
-	// Brand challenge
-	[data-animation=brand-challenge-banner] {
-		transform: translateX(0);
-	}
-	[data-animation=brand-challenge-title] {
-		transform: translateX(-54px);
-	}	
-	[data-animation=brand-challenge-intro] {
-		transform: translateX(0);
-	}
-	[data-animation=brand-challenge-banner],
-	[data-animation=brand-challenge-title],
-	[data-animation=brand-challenge-intro],
-	[data-animation=brand-challenge-news-1],
-	[data-animation=brand-challenge-news-2],
-	[data-animation=brand-challenge-news-3],
-	[data-animation=brand-challenge-news-4]  {
-		opacity: 1;
-	}
-	[data-animation=brand-challenge-news-1],
-	[data-animation=brand-challenge-news-2],
-	[data-animation=brand-challenge-news-3],
-	[data-animation=brand-challenge-news-4] {
-		transform: translateY(0)
-	}
-
-	// Students and Alumni
-	[data-animation=alu],
-	[data-animation=mni],
-	[data-animation=stude],
-	[data-animation=ntlife] {
-		opacity: 1;
-	}
-}
-
-
-// Tablet Landscape up
-@media (min-width: $screen-md-min) {
-
-	.js {
-		// News articles
-		[data-animation=news-title],
-		[data-animation=news-article-1],
-		[data-animation=news-article-2],
-		[data-animation=news-article-3]  {
-			transform: translateY(20vh);
-			opacity: 0;
-		}
-	
-		[data-animation=news-title] {
-			transform: translateY(-5vh);
-		}
-	
-		[data-animation=news-article-1] {
-			transition-delay: 100ms;
-		}
-		[data-animation=news-article-2] {
-			transition-delay: 200ms;
-		}
-		[data-animation=news-article-3] {
-			transition-delay: 300ms;
-		}
-	}
-
-	.is-animated {
-	
-		// Campuses
-		[data-animation='1'] {
-			margin-top: 120px;
-		}
-		[data-animation='2'] {
-			margin-top: 150px;
-		}
-		[data-animation='3'] {
-			margin-top: 0;			
-		}
-		[data-animation='4'] {
-			margin-top: 25px;			
-		}
-
-
-		[data-animation='8'] {
-			margin-top: 145px;
-		}			
-		[data-animation='9'] {
-			margin-bottom: 35px;
-		} 
-		[data-animation='10'] {
-			margin-bottom: 35px;
-			margin-top: 150px;
-		}
-		[data-animation='11'] {
-			margin-bottom: 135px;
-			margin-top: 25px;				
-		} 
-		[data-animation='12'] {
-			margin-bottom: 135px;
-		} 
-
-		// Students and Alumni
-		[data-animation=alu] {
-			margin-top: 50px;
-		}			
-		[data-animation=mni] {
-			margin-top: 90px;
-		}			
-		[data-animation=stude] {
-			margin-top: 100px;
-		}	
-		[data-animation=ntlife] {
-			margin-top: 145px;			
-			margin-bottom: 70px;
-		} 
-
-		// News articles
-		[data-animation=news-title],
-		[data-animation=news-article-1],
-		[data-animation=news-article-2],
-		[data-animation=news-article-3] {
-			transform: translateY(0);
-			opacity: 1;	
-
-		}
-	}
-}
-
-
-// Tablet Portrait only
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
-	.js .is-animated {
-		[data-animation='1meow'] {
-			margin-bottom: 35px;
-		} 
-		[data-animation='2meow'] {
-			margin-bottom: 50px;
-		} 
-
-		[data-animation='1'] {
-			margin-top: 40px;
-		}
-		[data-animation='2'] {
-			margin-top: 60px;
-			margin-bottom: 40px;
-		}
-		[data-animation='3'] {
-			margin-top: 0;			
-		}
-		[data-animation='4'] {
-			margin-top: 25px;			
-		}
-
-		// Students and Alumni
-		[data-animation=alu] {
-			margin-top: 50px;
-		}			
-		[data-animation=mni] {
-			margin-top: 90px;
-		}			
-		[data-animation=stude] {
-			margin-top: 100px;
-		}			
-		[data-animation=ntlife] {
-			margin-top: 145px;
-		}			
-
-	}
-}
-
-
-
-
-
-
-
-
-
-// Mobile Only	
-@media (max-width: $screen-sm-max) {
-	.title_slice,
-	.title_slice_inline {
-		height: 20px;
-		width: auto;
-		max-width: none
-	}
-
-	.is-animated {
-		[data-animation='1'] {
-			margin-top: 20px;
-		}
-
-		[data-animation='6'] {
-			margin-top: 20px;
-			margin-bottom: 40px;
-		}
-
-		[data-animation='7'] {
-			margin-top: 20px;
-		}
-			
-		[data-animation='8'] {
-			margin-top: 40px;
-		}
+// Students and Alumni
+@media (max-width: $screen-sm-max) { 
+	.alumni-xs {
+		margin-bottom: 30px;
 	}
 }
 

@@ -149,7 +149,7 @@ var VEGA = {
 				  }
 			  },
 			  {
-				breakpoint: 960,
+				breakpoint: 1023,
 				settings: "unslick"
 			  }
 			  // You can unslick at a given breakpoint now by adding:
