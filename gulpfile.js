@@ -32,7 +32,7 @@ var paths = {
 		imports : './scss/**/*.scss'
 	},
 	scripts: {
-		src: ['./js/plugins/jquery-2.2.4.js', './js/plugins/bootstrap.min.js', './js/plugins/slick.1.8.0.js', './js/script.js']
+		src: ['./js/plugins/jquery-2.2.4.js', './js/plugins/slick.1.8.0.js', './js/script.js']
 	},
 	developmentScripts : './scripts',
 	productionScripts : './scripts/production'

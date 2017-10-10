@@ -278,14 +278,14 @@ $sprite-y : 100px;
 // Brand Challenge
 // ---------------------------------------------
 @media (min-width: $screen-md-min) { 
-	.hompage__panel-title-brand-challenge {
-		transform: translateX(-54px);
-	}
+	// .is-animated .hompage__panel-title-brand-challenge {
+	// 	transform: translateX(-54px);
+	// }
 }
 @media (max-width: $screen-sm-max) { 
-	.hompage__panel-title-brand-challenge {
-		margin-top: -2rem;
-	}
+	// .is-animated .hompage__panel-title-brand-challenge {
+	// 	margin-top: -2rem;
+	// }
 	.xs-grid-pull {
 		margin: 0 #{-$grid-gutter-width}; 
 	}
@@ -312,15 +312,241 @@ $sprite-y : 100px;
 
 
 
-// Campuses, Students and Alumni
+// Animation
 // ---------------------------------------------
 .homepage__panel-campuses-title-wrapper {}
-	.hompage__panel-title-campuses {}	
-	.title_slice {					display: block;	}
-	.title_slice_inline {			display: inline-block;	}
-	.title_slice_wrapper {			font-size: 0;	}
-	.slice_translate-left {			transform: translateX(-$grid-gutter-width);	}
-	.slice_translate-right {		transform: translateX($grid-gutter-width);}		
+.hompage__panel-title-campuses {}	
+.title_slice {					display: block;	}
+.title_slice_inline {			display: inline-block;	}
+.title_slice_wrapper {			font-size: 0;	}
+
+// Position some of the te/xt so that it reads text
+.slice_translate-left {			transform: translateX(-$grid-gutter-width);	}
+.slice_translate-right {		transform: translateX($grid-gutter-width);}
+
+
+[data-animation] {
+	transition: all 800ms $transition;
+}
+
+
+.js {	
+	// Brand challenge
+	[data-animation=brand-challenge-banner],
+	[data-animation=brand-challenge-title],
+	[data-animation=brand-challenge-intro],
+	[data-animation=brand-challenge-news-1],
+	[data-animation=brand-challenge-news-2],
+	[data-animation=brand-challenge-news-3],
+	[data-animation=brand-challenge-news-4]  {
+		opacity: 0;
+	}
+	[data-animation=brand-challenge-banner] {
+		transform: translateX(-100px);
+	}
+	[data-animation=brand-challenge-title] {}	
+	[data-animation=brand-challenge-intro] {
+		transform: translateX(100px);
+	}
+	
+	[data-animation=brand-challenge-news-1],
+	[data-animation=brand-challenge-news-2],
+	[data-animation=brand-challenge-news-3],
+	[data-animation=brand-challenge-news-4] {
+		transform: translateY(100px)
+	}
+	
+	[data-animation=brand-challenge-news-1] {transition-delay: 100ms;}
+	[data-animation=brand-challenge-news-2] {transition-delay: 200ms;}
+	[data-animation=brand-challenge-news-3] {transition-delay: 300ms;}
+	[data-animation=brand-challenge-news-4] {transition-delay: 400ms;}
+
+	
+	// Students and Alumni
+	[data-animation=alu],
+	[data-animation=mni],
+	[data-animation=stude],
+	[data-animation=ntlife] {
+		opacity: 0;
+	}
+}
+
+.is-animated {
+	// Brand challenge
+	[data-animation=brand-challenge-banner] {
+		transform: translateX(0);
+	}
+	[data-animation=brand-challenge-title] {
+		transform: translateX(-54px);
+	}	
+	[data-animation=brand-challenge-intro] {
+		transform: translateX(0);
+	}
+	[data-animation=brand-challenge-banner],
+	[data-animation=brand-challenge-title],
+	[data-animation=brand-challenge-intro],
+	[data-animation=brand-challenge-news-1],
+	[data-animation=brand-challenge-news-2],
+	[data-animation=brand-challenge-news-3],
+	[data-animation=brand-challenge-news-4]  {
+		opacity: 1;
+	}
+	[data-animation=brand-challenge-news-1],
+	[data-animation=brand-challenge-news-2],
+	[data-animation=brand-challenge-news-3],
+	[data-animation=brand-challenge-news-4] {
+		transform: translateY(0)
+	}
+
+	// Students and Alumni
+	[data-animation=alu],
+	[data-animation=mni],
+	[data-animation=stude],
+	[data-animation=ntlife] {
+		opacity: 1;
+	}
+}
+
+
+// Tablet Landscape up
+@media (min-width: $screen-md-min) {
+
+	.js {
+		// News articles
+		[data-animation=news-title],
+		[data-animation=news-article-1],
+		[data-animation=news-article-2],
+		[data-animation=news-article-3]  {
+			transform: translateY(20vh);
+			opacity: 0;
+		}
+	
+		[data-animation=news-title] {
+			transform: translateY(-5vh);
+		}
+	
+		[data-animation=news-article-1] {
+			transition-delay: 100ms;
+		}
+		[data-animation=news-article-2] {
+			transition-delay: 200ms;
+		}
+		[data-animation=news-article-3] {
+			transition-delay: 300ms;
+		}
+	}
+
+	.is-animated {
+	
+		// Campuses
+		[data-animation='1'] {
+			margin-top: 120px;
+		}
+		[data-animation='2'] {
+			margin-top: 150px;
+		}
+		[data-animation='3'] {
+			margin-top: 0;			
+		}
+		[data-animation='4'] {
+			margin-top: 25px;			
+		}
+
+
+		[data-animation='8'] {
+			margin-top: 145px;
+		}			
+		[data-animation='9'] {
+			margin-bottom: 35px;
+		} 
+		[data-animation='10'] {
+			margin-bottom: 35px;
+			margin-top: 150px;
+		}
+		[data-animation='11'] {
+			margin-bottom: 135px;
+			margin-top: 25px;				
+		} 
+		[data-animation='12'] {
+			margin-bottom: 135px;
+		} 
+
+		// Students and Alumni
+		[data-animation=alu] {
+			margin-top: 50px;
+		}			
+		[data-animation=mni] {
+			margin-top: 90px;
+		}			
+		[data-animation=stude] {
+			margin-top: 100px;
+		}	
+		[data-animation=ntlife] {
+			margin-top: 145px;			
+			margin-bottom: 70px;
+		} 
+
+		// News articles
+		[data-animation=news-title],
+		[data-animation=news-article-1],
+		[data-animation=news-article-2],
+		[data-animation=news-article-3] {
+			transform: translateY(0);
+			opacity: 1;	
+
+		}
+	}
+}
+
+
+// Tablet Portrait only
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+	.js .is-animated {
+		[data-animation='1meow'] {
+			margin-bottom: 35px;
+		} 
+		[data-animation='2meow'] {
+			margin-bottom: 50px;
+		} 
+
+		[data-animation='1'] {
+			margin-top: 40px;
+		}
+		[data-animation='2'] {
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+		[data-animation='3'] {
+			margin-top: 0;			
+		}
+		[data-animation='4'] {
+			margin-top: 25px;			
+		}
+
+		// Students and Alumni
+		[data-animation=alu] {
+			margin-top: 50px;
+		}			
+		[data-animation=mni] {
+			margin-top: 90px;
+		}			
+		[data-animation=stude] {
+			margin-top: 100px;
+		}			
+		[data-animation=ntlife] {
+			margin-top: 145px;
+		}			
+
+	}
+}
+
+
+
+
+
+
+
+
 
 // Mobile Only	
 @media (max-width: $screen-sm-max) {
@@ -332,112 +558,22 @@ $sprite-y : 100px;
 	}
 
 	.is-animated {
-		.title_slide-offset-1 {
+		[data-animation='1'] {
 			margin-top: 20px;
 		}
 
-		.title_slide-offset-6 {
+		[data-animation='6'] {
 			margin-top: 20px;
 			margin-bottom: 40px;
 		}
 
-		.title_slide-offset-7 {
+		[data-animation='7'] {
 			margin-top: 20px;
 		}
 			
-		.title_slide-offset-8 {
+		[data-animation='8'] {
 			margin-top: 40px;
 		}
 	}
 }
-
-
-// Tablet Landscape up
-@media (min-width: $screen-md-min) {
-	.is-animated {
-		// Campuses
-		.title_slice-spacer-1 {
-			margin-bottom: 35px;
-		} 
-		.title_slice-spacer-2 {
-			margin-bottom: 135px;
-		} 
-
-		.title_slide-offset-1 {
-			margin-top: 120px;
-		}
-		.title_slide-offset-2 {
-			margin-top: 150px;
-		}
-		.title_slide-offset-3 {
-			margin-top: 0;			
-		}
-		.title_slide-offset-4 {
-			margin-top: 25px;			
-		}
-
-		// Students and Alumni
-		.title_slide-offset-5 {
-			margin-top: 50px;
-		}			
-		.title_slide-offset-6 {
-			margin-top: 90px;
-		}			
-		.title_slide-offset-7 {
-			margin-top: 100px;
-		}			
-		.title_slide-offset-8 {
-			margin-top: 145px;
-		}			
-
-		.title_slice-spacer-3 {
-			margin-bottom: 70px;
-		} 
-	}
-}
-
-
-// Tablet Portrait only
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
-	.title_slice-spacer-1 {
-		margin-bottom: 35px;
-	} 
-	.title_slice-spacer-2 {
-		margin-bottom: 50px;
-	} 
-
-	.title_slide-offset-1 {
-		margin-top: 40px;
-	}
-	.title_slide-offset-2 {
-		margin-top: 60px;
-		margin-bottom: 40px;
-	}
-	.title_slide-offset-3 {
-		margin-top: 0;			
-	}
-	.title_slide-offset-4 {
-		margin-top: 25px;			
-	}
-
-	// Students and Alumni
-	.title_slide-offset-5 {
-		margin-top: 50px;
-	}			
-	.title_slide-offset-6 {
-		margin-top: 90px;
-	}			
-	.title_slide-offset-7 {
-		margin-top: 100px;
-	}			
-	.title_slide-offset-8 {
-		margin-top: 145px;
-	}			
-
-	.title_slice-spacer-3 {
-		margin-bottom: 70px;
-	} 
-}
-
-
 

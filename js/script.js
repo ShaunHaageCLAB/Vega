@@ -8,9 +8,41 @@ var VEGA = {
             header:		$("#site-header"),  
             content: 	$('#s4-workspace'), 
 			footer: 	$('#site-footer'),
-			carousel :	$('.js-mobile-carousel')
-        };
+			carousel :	$('.js-mobile-carousel'),
+			panels : 	$('.js-panel-animation')
+		};
+		
+		var panels = {
+			top : [],
+			id : [],
+			animatedCount : 0,
+			animationOffset : 0
+		};
 
+		
+		$('html').removeClass('no-js').addClass('js');
+
+		// Homepage animation
+		// -----------------------------------------------------------
+		
+		// Get initial page dimensions
+		getPanelDimensions();
+
+		// Update panel dimensions on page resize
+		$(window).resize(function() {
+			panels.top = []; //empty our array
+			getPanelDimensions();
+		});		
+
+
+		function getPanelDimensions() {
+			panels.animationOffset = $(window).height() / 3;
+			
+			$cache.panels.each( function() {
+				panels.top.push($(this).offset().top);
+				panels.id.push($(this).attr('id'));
+			});
+		}
 
 		// Fixed Navigation bar
 		// -----------------------------------------------------------
@@ -23,6 +55,28 @@ var VEGA = {
 			} else {
 				$cache.body.removeClass('has-reduced-menu');
 			}
+
+			// Animated Homepage panels
+			if(panels.animatedCount <= panels.top.length) {
+				for (var index = 0; index < panels.top.length; index++) {
+					var $element = $('#' + panels.id[index]);
+
+					if(scrollposition >= panels.top[index] - panels.animationOffset) {
+						if( !$element.hasClass('is-animated') ) {
+							$element.addClass('is-animated');
+							panels.animatedCount++;
+						}
+					} 
+					
+					if(scrollposition <= panels.top[index] - panels.animationOffset) {				
+						if( $element.hasClass('is-animated') ) {
+							$element.removeClass('is-animated');
+							panels.animatedCount--;
+						}						
+					}
+				}
+			}
+
 		});
 		
 		// Accordian Menu
