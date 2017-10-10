@@ -1,0 +1,217 @@
+// Sharepoint theme overrides
+// ----------------------------------------------------------------
+.main-content {
+	float: none;
+	width: auto;
+}
+.ms-belltown-anonspacer {
+	height: auto;
+}
+#s4-workspace {
+	max-width: none;
+	padding: 0;
+	overflow: inherit;
+}
+#ms-belltown-table {
+	padding: 0;
+	width: auto;
+}
+
+.ms-table {
+	display: block;
+}
+
+body {
+	overflow: auto;
+}
+
+
+
+
+// Social media links
+// ----------------------------------------------------------------
+.social__link {
+	text-indent: -1000em;
+	display: block;
+	width: 41px;
+	height: 41px;
+	margin: 0 5px;
+	background: url('../img/socialmedia-sprite.png') no-repeat 0 0;
+
+	&[href^="https://facebook"],
+	&[href^="http://facebook"] {
+		background-position: 0 0;
+	}
+	&[href^="https://twitter"], 
+	&[href^="http://twitter"] {
+		background-position: -41px 0;
+	}
+	&[href^="https://linkedin"],
+	&[href^="http://linkedin"] {
+		background-position: -82px 0;
+	}
+
+}
+
+
+// Footer
+// ----------------------------------------------------------------
+$footer-spacing : 70px;
+$footer-text-color: #a6a6a6;
+
+.footer__logo {
+	display: inline-block;
+}
+
+.site-footer {
+	background: $gray-darker top center repeat-x;
+	color: $footer-text-color;
+	a {
+		color: rgba($white, .5);
+	}
+	.container {
+		position: relative;
+	}
+}
+
+
+.copyright {
+	border: solid 1px $footer-text-color;
+	border-width: 1px 0;
+	padding-top: 20px;
+}
+
+.js-btn-back-to-top {
+	width: 51px;
+	height: 51px;
+	line-height: 51px;
+	text-align: center;
+	padding: 0;
+	background: url('../img/sprite_footer_up.png') no-repeat center center;
+
+	.site-footer & {
+		position: absolute;
+		top: 0;
+		right: 40px;
+	}
+}
+
+// Mobile up
+@media (max-width: $grid-float-breakpoint) {
+	.site-footer {
+		background-image: url('../img/footer.png');
+		padding: 20px 0;
+	}
+
+	.footer__logo-wrapper {
+		display: none;
+	}
+
+	.navbar-footer {
+		margin-bottom: 20px;
+	}
+
+	.navbar-footer {
+
+		.navbar-nav {
+			text-align: center;
+	
+			> li {
+
+				> a {
+					padding: 10px;
+				}
+			}
+		}	
+	}
+
+	.copyright {
+		display: block;
+		padding: 5px 0;
+	}
+	.footer__sub-logo {
+		margin: 0 auto;
+		margin-bottom: 20px;
+		display: block;
+	}	
+}
+
+// Desktop up
+@media (min-width: $grid-float-breakpoint) {
+
+	.site-footer {
+		position: relative;
+		background: $gray-darker url('../img/footer.png') top center repeat-x;
+		padding: $footer-spacing 0 50px 0;
+		color: $footer-text-color;		
+
+		a {
+			color: rgba($white, .5);
+		}
+		@media (max-width: $screen-xs-max) { 
+			text-align: center;
+		}
+	
+		.container {
+			position: relative;
+		}
+	}
+
+	.footer__logo-wrapper {
+		margin-bottom: 60px;
+		text-align: center;
+	}
+
+	.navbar-footer {
+		margin-bottom: 50px;
+		.navbar-nav {
+			text-align: center;
+	
+			> li {
+				display: inline-block;
+				> a {
+					padding: 0 10px;
+	
+					&:hover {
+						color: $gray;
+					}
+	
+				}
+			}
+		}	
+	}
+
+	.copyright__wrapper {
+		display: flex;
+	}
+	.footer__sub-logo {
+		margin-right: 20px;
+	}	
+}
+
+// Youtube responsive
+// ----------------------------------------------------------------
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    max-width: 100%;	
+}
+
+// Google Maps
+// ----------------------------------------------------------------
+.js-google-map {
+	height: 500px;
+}

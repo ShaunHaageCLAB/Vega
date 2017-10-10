@@ -1,0 +1,66 @@
+//
+// Jumbotron
+// --------------------------------------------------
+.jumbotron {
+    // padding-bottom: $jumbotron-padding;
+    margin-bottom: 40px;
+	h1,
+	.h1 {
+		color: inherit;
+	}
+    .container {
+		background-repeat: no-repeat;
+		background-position: bottom right;
+	}
+
+	@media screen and (max-width: $screen-xs-max) {
+		.container {
+			padding-top: $jumbotron-padding/4;
+			padding-bottom: $jumbotron-padding/4;
+			background-size: 70% ;
+		}
+	}
+	
+    @media screen and (min-width: $screen-sm-min) {
+		.container {
+			padding-top: $jumbotron-padding;
+			height: 300px;		
+		}
+        h1,
+        .h1 {
+            font-size: $jumbotron-heading-font-size;
+        }
+    }
+}
+
+.jumbotron__green {
+    background-color: $green;
+    color: $pale-yellow;
+}
+.jumbotron__orange {
+    background-color: $orange;
+    color: $pale-yellow; 
+}
+.jumbotron__magenta {
+    background-color: $magenta;
+    color: $white;
+}
+.jumbotron__teal {
+    background-color: $teal;
+    color: $white;
+}
+
+.container {
+	.jumbotron__jhb & {
+		background-image: url('../img/banner_contact-jhb.png');
+	}	
+	.jumbotron__cpt & {
+		background-image: url('../img/banner_contact-cpt.png');
+	}	
+	.jumbotron__dbn & {
+		background-image: url('../img/banner_contact-dbn.png');
+	}	
+	.jumbotron__pta & {
+		background-image: url('../img/banner_contact-pta.png');
+	}	
+}

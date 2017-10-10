@@ -1,0 +1,283 @@
+// Navbars
+// --------------------------------------------------
+.site-header {
+	background-color: $white;
+	z-index: $zindex-menu-toggle;
+}
+	.anchor {
+		position: relative; 
+		top: -$header-height;
+	}
+
+.navbar-nav {
+	> li {
+		> a {
+			padding: 0;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	> .active > a {
+		&, &:hover, &:focus {
+			cursor: default;
+		}
+	}
+}
+
+.navbar-secondary,
+.navbar-primary {
+	.navbar-nav {
+		display: flex;
+		> li {
+			flex: 1 1 auto;
+			> a {
+				text-transform: uppercase;
+				padding: 0;
+				line-height: $navbar-height;
+				font-weight: bold;			
+			}
+		}
+	}
+}
+
+
+// Primary navbar
+// ----------------------------------------------
+.navbar-primary {
+	background-color: $navbar-default-bg;
+
+	.navbar-nav {
+		> li {
+			margin: 0 1px;
+
+			&:nth-of-type(1) {
+				a {
+					color: $green;
+				}
+				&.active a {
+					background: $green;
+					color: $white;
+				}
+			} 
+			&:nth-of-type(2) {
+				a {
+					color: $dark-red;
+				}
+				&.active a {
+					background: $dark-red;
+					color: $white;
+				}
+			}
+			&:nth-of-type(3) {
+				a {
+					color: $orange;
+				}
+				&.active a {
+					background: $orange;
+					color: $white;
+				}
+			}
+			&:nth-of-type(4) {
+				a {
+					color: $teal;
+				}
+				&.active a {
+					background: $teal;
+					color: $white;
+				}
+			}
+		}
+
+		> li > a {
+			background-color: $navbar-default-link-bg;
+			color: $navbar-default-link-color;
+			font-size: 1.8rem;
+		
+			&:hover,
+			&:focus {
+				color: $navbar-default-link-hover-color;
+				background-color: $navbar-default-link-hover-bg;
+			}
+		}
+	}
+
+
+    > .active > a {
+		&, &:hover, &:focus {
+			color: $navbar-default-link-active-color;
+			background-color: $navbar-default-link-active-bg;
+		}
+	}
+	
+    > .disabled > a {
+		&, &:hover, &:focus {
+			color: $navbar-default-link-disabled-color;
+			background-color: $navbar-default-link-disabled-bg;
+		}
+    }
+}
+
+// Secondary navbar
+// ----------------------------------------------
+.navbar-secondary {
+	background: $red;
+	box-shadow: inset 0 2px 10px rgba(0, 0, 0, .3);
+
+	.navbar-nav {
+		> li > a {
+			color: $navbar-default-link-color;
+			font-size: 1.5rem;
+			color: $white;
+			&:hover {
+				background-color: darken($red, 5%);
+			}			
+		}
+
+		> .active > a {
+			&, &:hover, &:focus {
+				color: $white;
+				background-color: darken($red, 5%);
+			}
+		}		
+	} 
+}
+
+
+
+
+
+// Navbar - Desktop and tablet landscape
+// --------------------------------------------------
+@media (min-width: $grid-float-breakpoint) {
+
+	.site-header {
+		height: $header-height;
+		display: flex;
+		flex-direction: column;
+		border-top: solid 5px $teal;
+
+		.andrew_fairlie {
+			flex: 1 1 auto;
+		}
+	}	
+	
+	.navbar-brand-wrapper {
+		text-align: center;
+		margin-top: 20px;
+	}
+	
+	.navbar-toggle {
+		display: none;
+	}
+	
+	.navbar-secondary {
+		top: 0;
+		left: 0;
+		right: 0;
+	
+		.has-reduced-menu & {
+			position: fixed;
+			z-index: $zindex-navbar; 
+		}
+	}
+}
+
+
+
+// Navbar - mobile and tablet portrait
+// --------------------------------------------------
+@media (max-width: $grid-float-breakpoint) {
+	body {
+		padding-top: $navbar-height-mobile;
+	}
+
+	.andrew_fairlie {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $navbar-height-mobile;
+		z-index: $zindex-navbar;
+		background: $white;
+	}
+
+	.navbar-brand-wrapper {
+		flex: 1 1 auto;
+		padding-left: 10px;
+	}
+
+		.navbar-brand-logo {
+			height: $navbar-height-mobile - 20px;
+			margin-top: 10px;
+		}	
+
+	.navbar-primary .container {
+		padding: 0;
+	}
+
+	.navbar-secondary {
+		position: fixed;
+		top: $navbar-height-mobile;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100vh;
+		width: 100vw;
+		z-index: $zindex-menu-main;
+		transition: all 200ms $transition;
+		transform: translate3d(100%, 0, 0);
+
+		.has-navigation-active & {
+			transform: translate3d(0, 0, 0);
+		}
+		
+		.navbar-nav {
+			flex-direction: column;
+			> li > a {
+				text-align: left;
+				border-bottom: solid 1px $dark-red;
+			}
+		}
+	}
+
+	.toggle__search-wrapper {
+		display: none !important;
+	}
+
+	// Navbar toggle
+	.navbar-toggle {
+		padding: 0;
+		background-color: $yellow;
+		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+		border: none;
+		width: $navbar-height-mobile;
+		font-size: 40px;
+		color: $white; 
+		text-align: center;
+
+		.fa-close {
+			display: none;
+		}
+		
+		&:hover, &:focus {
+			background-color: $yellow;
+		}
+
+		&:focus {
+			outline: 0;
+			background-color: $yellow;
+		}
+	}
+
+	.has-navigation-active .navbar-toggle {
+		.fa-close  {
+			display: inline-block;
+		}
+		.fa-bars  {
+			display: none;
+		}
+	}	
+
+}

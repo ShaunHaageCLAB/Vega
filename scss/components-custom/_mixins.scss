@@ -1,0 +1,56 @@
+// Font Families
+// -----------------------------------
+@mixin font-face($name, $filename) {
+	@font-face {
+		font-family: $name;
+		src: url('#{$filename}.woff') format('woff');
+		font-style: normal;
+		font-weight: normal;
+		 -webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@mixin font-face-extended($name, $weight, $style, $filename) {
+	@font-face {
+		font-family: $name;
+		src:url('#{$filename}.woff') format('woff');
+		font-style: $style;
+		font-weight: $weight;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+// Font Sizing
+// -----------------------------------
+@mixin primary-bg() {
+	color: $white;
+	background-color: $brand-primary;	
+}
+
+// create a circle
+// -----------------------------------
+@mixin clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+ 
+// Used on the helper classes : menu, menu-horz-block, menu-horz-inline, menu-vert
+@mixin menu-mixin() {
+	margin: 0; 
+	padding: 0; 
+	li {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+}

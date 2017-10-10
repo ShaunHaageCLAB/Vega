@@ -1,0 +1,443 @@
+// Homepage
+// ---------------------------------------------
+#home-intro {
+	background-color: $gray-darker;
+	background-image: url('../img/sprite_hashes.png');
+	height: calc(100vh -  #{$header-height});
+}
+#home-specialisations {
+	background-color: $orange;
+}
+#home-brand-challenge {
+	background-color: $yellow;
+}
+#home-campuses {
+	background-color: $teal;
+
+	@media (min-width: $screen-sm-max) {
+		background-image: url('../img/homepage_campuses-bg.png');
+		background-repeat: repeat-x;
+		background-position: top;
+	}
+}
+#home-students {
+	background-color: $magenta;
+	@media (max-width: $screen-sm-max) {
+		padding-top: 5vh;	
+	}
+}
+#home-news {
+	@media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) { 
+		height: auto;
+		padding-bottom: 0;
+	}
+}
+
+// Site structure
+// ----------------------------------------------------------------
+@media (min-width: $grid-float-breakpoint) {
+	.site-content {
+		height: calc(100vh);
+	}
+}
+
+@media (max-width: $grid-float-breakpoint) {
+	.site-content {
+		height: calc(100vh -  #{$navbar-height-mobile});
+	}
+}
+
+.homepage__panel {
+	display: flex;
+    align-items: center;
+
+	.container {
+		flex: 1 1 auto;
+	}
+}
+
+@media all and (-ms-high-contrast:none) {
+.homepage__panel { 
+	display: block;  
+	padding-top: 20vh;
+} /* IE10 */
+*::-ms-backdrop, .homepage__panel { 
+	display: block; 
+	padding-top: 20vh;
+} /* IE11 */
+}
+
+
+@media (min-width: $screen-sm-max) {}
+
+@media (max-width: $screen-sm-max) {		
+	.homepage__panel {
+		padding-bottom: 10vh;
+	}
+}
+	
+	.hompage__panel-title-specialisations {
+		height: 14vh;
+		margin: 0;
+	}
+
+
+@media (max-width: $screen-sm-max) {		
+	.homepage__panel-title-xs {
+		background: black;
+		color: $white;
+		font-size: 1.5rem;
+		height: auto;
+		padding: 15px 5px;
+		margin: 0 #{-$grid-gutter-width};
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+	
+
+
+// Intro
+// ---------------------------------------------
+
+.homepage__panel-intro-wrapper {
+	margin-bottom: 20vh;
+	// height: 40vh;
+	@media (max-width: $screen-sm-max) {		
+		// margin-top: 30vh;
+		// height: 50vh;
+	}
+	@media (max-width: $screen-xs-max) {		
+		// margin-top: 8vh;
+	}
+}
+
+	.hompage__panel-title-intro {
+		font-weight: normal;
+		letter-spacing: 8px;
+		margin-bottom: 3vh;
+	}
+
+	
+	.academic-levels__menu {}
+		
+		.academic-levels__item {
+			flex: 1 1 auto;
+
+			@media (max-width: $screen-xs-max) {		
+				margin-bottom: 10px;
+			}
+
+			&:nth-of-type(1) {
+				.academic-levels__link {
+					background-color: $orange;
+					&:hover {
+						background-color: $dark-orange;
+					}
+				}
+			}
+			&:nth-of-type(2) {
+				.academic-levels__link {
+					background-color: $magenta;
+					&:hover {
+						background-color: $dark-magenta;
+					}
+				}
+			}
+			&:nth-of-type(3) {
+				.academic-levels__link {
+					background-color: $teal;
+					&:hover {
+						background-color: $dark-teal;
+					}
+				}
+			}
+			&:nth-of-type(4) {
+				.academic-levels__link {
+					background-color: $yellow;
+					&:hover {
+						background-color: $dark-yellow;
+					}
+				}
+			}
+			&:nth-of-type(5) {
+				.academic-levels__link {
+					background-color: $green;
+					&:hover {
+						background-color: $dark-green;
+					}
+				}
+			}
+		}
+			
+			.academic-levels__link {
+				display: block;
+				text-align: center;
+				padding: 2vh 5px;
+				text-transform: uppercase;
+				background: $brand-primary;
+				color: $white;
+				font-weight: bold;
+				transition: all 200ms $transition; 
+				&:hover,
+				&:visited {
+					color: $white;
+				}
+			}
+
+
+
+
+
+			
+// Specialisations 
+// ---------------------------------------------
+
+.specialisations__menu {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.specialisations__item {
+	height: 22vh; // 100vh - 10 - 10 - 14
+	
+	@media (max-width: $screen-xs-max) { 
+		width: 50%;
+	}
+	@media (min-width: $screen-xs-max) { 
+		width: 25%;
+	}
+	@media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) { 
+		width: 33.33333333333333%;
+	}
+}
+
+.specialisations__link {
+	display: block;
+	text-align: center;
+}
+
+.specialisations__icon {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background: url('../img/sprite_specialisations.png');
+	margin-bottom: 3vh;
+	@media (max-width: $screen-xs-max) { 
+		transform: scale(.6);
+		margin-bottom: 0;
+	}	
+}
+
+.specialisations__title {
+	display: block;
+	text-transform: uppercase;
+	color: $white;
+}
+
+
+$sprite-x : 100px;
+$sprite-y : 100px;
+
+.sprite_graphic_design {
+	background-position: $sprite-x * -0 $sprite-y * -0;
+}
+.sprite_multimedia {
+	background-position: $sprite-x * -1 $sprite-y * -0;
+}
+.sprite_copywriting {
+	background-position: $sprite-x * -2 $sprite-y * -0;
+}
+.sprite_game_design {
+	background-position: $sprite-x * -3 $sprite-y * -0;
+}
+
+
+.sprite_fashion_design {
+	background-position: $sprite-x * -0 $sprite-y * -1;
+}
+.sprite_interior_design {
+	background-position: $sprite-x * -1 $sprite-y * -1;
+}
+.sprite_digital_marketing {
+	background-position: $sprite-x * -2 $sprite-y * -1;
+}
+.sprite_brand_communication {
+	background-position: $sprite-x * -3 $sprite-y * -1;
+}
+
+.sprite_photography {
+	background-position: $sprite-x * -0 $sprite-y * -2;
+}
+.sprite_brand_management {
+	background-position: $sprite-x * -01 $sprite-y * -2;
+}
+
+
+// Brand Challenge
+// ---------------------------------------------
+@media (min-width: $screen-md-min) { 
+	.hompage__panel-title-brand-challenge {
+		transform: translateX(-54px);
+	}
+}
+@media (max-width: $screen-sm-max) { 
+	.hompage__panel-title-brand-challenge {
+		margin-top: -2rem;
+	}
+	.xs-grid-pull {
+		margin: 0 #{-$grid-gutter-width}; 
+	}
+
+	.carousel__brand-challenge {
+		padding: 0 50px;
+
+		.slick-slide {
+			background: $white;
+		}
+	}
+
+}
+
+@media (min-width: $screen-xs-max) { 
+	.button_float {
+		position: absolute;
+		bottom: 40px;
+		left: 0;
+		right: 0;
+	}
+}
+
+
+
+
+// Campuses, Students and Alumni
+// ---------------------------------------------
+.homepage__panel-campuses-title-wrapper {}
+	.hompage__panel-title-campuses {}	
+	.title_slice {					display: block;	}
+	.title_slice_inline {			display: inline-block;	}
+	.title_slice_wrapper {			font-size: 0;	}
+	.slice_translate-left {			transform: translateX(-$grid-gutter-width);	}
+	.slice_translate-right {		transform: translateX($grid-gutter-width);}		
+
+// Mobile Only	
+@media (max-width: $screen-sm-max) {
+	.title_slice,
+	.title_slice_inline {
+		height: 20px;
+		width: auto;
+		max-width: none
+	}
+
+	.is-animated {
+		.title_slide-offset-1 {
+			margin-top: 20px;
+		}
+
+		.title_slide-offset-6 {
+			margin-top: 20px;
+			margin-bottom: 40px;
+		}
+
+		.title_slide-offset-7 {
+			margin-top: 20px;
+		}
+			
+		.title_slide-offset-8 {
+			margin-top: 40px;
+		}
+	}
+}
+
+
+// Tablet Landscape up
+@media (min-width: $screen-md-min) {
+	.is-animated {
+		// Campuses
+		.title_slice-spacer-1 {
+			margin-bottom: 35px;
+		} 
+		.title_slice-spacer-2 {
+			margin-bottom: 135px;
+		} 
+
+		.title_slide-offset-1 {
+			margin-top: 120px;
+		}
+		.title_slide-offset-2 {
+			margin-top: 150px;
+		}
+		.title_slide-offset-3 {
+			margin-top: 0;			
+		}
+		.title_slide-offset-4 {
+			margin-top: 25px;			
+		}
+
+		// Students and Alumni
+		.title_slide-offset-5 {
+			margin-top: 50px;
+		}			
+		.title_slide-offset-6 {
+			margin-top: 90px;
+		}			
+		.title_slide-offset-7 {
+			margin-top: 100px;
+		}			
+		.title_slide-offset-8 {
+			margin-top: 145px;
+		}			
+
+		.title_slice-spacer-3 {
+			margin-bottom: 70px;
+		} 
+	}
+}
+
+
+// Tablet Portrait only
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+	.title_slice-spacer-1 {
+		margin-bottom: 35px;
+	} 
+	.title_slice-spacer-2 {
+		margin-bottom: 50px;
+	} 
+
+	.title_slide-offset-1 {
+		margin-top: 40px;
+	}
+	.title_slide-offset-2 {
+		margin-top: 60px;
+		margin-bottom: 40px;
+	}
+	.title_slide-offset-3 {
+		margin-top: 0;			
+	}
+	.title_slide-offset-4 {
+		margin-top: 25px;			
+	}
+
+	// Students and Alumni
+	.title_slide-offset-5 {
+		margin-top: 50px;
+	}			
+	.title_slide-offset-6 {
+		margin-top: 90px;
+	}			
+	.title_slide-offset-7 {
+		margin-top: 100px;
+	}			
+	.title_slide-offset-8 {
+		margin-top: 145px;
+	}			
+
+	.title_slice-spacer-3 {
+		margin-bottom: 70px;
+	} 
+}
+
+
+

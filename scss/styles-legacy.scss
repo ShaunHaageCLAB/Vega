@@ -1,0 +1,37 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "bootstrap-custom/variables";  // Custom
+@import "bootstrap/mixins";
+@import "components-custom/mixins"; 
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap-custom/type"; // Custom
+
+
+// Components
+@import "bootstrap/navs";
+@import "bootstrap-custom/navbar"; // Custom
+@import "components-custom/structure";
+
+// Utility classes 
+@import "bootstrap-custom/utilities";  // Custom
+
+
+
+.site-content, 
+.site-footer,
+.sr-only,
+.navbar__primary-nav,
+.navbar__secondary {
+	display: none;
+}
+

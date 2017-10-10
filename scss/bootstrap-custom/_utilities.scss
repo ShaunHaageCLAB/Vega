@@ -1,0 +1,183 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Lists as menus
+// -------------------------
+.menu,
+.menu-horz-block,
+.menu-horz-inline,
+.menu-horz-flex,
+.menu-vert-flex,
+.menu-vert,
+
+.menu-sm,
+.menu-horz-block-sm,
+.menu-horz-inline-sm,
+.menu-horz-flex-sm,
+.menu-vert-flex-sm,
+.menu-vert-sm { 
+	@include menu-mixin(); 
+}
+
+.menu-horz-flex {
+	display: flex;
+}
+
+.menu-vert-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+ // Navigation Layout
+.menu-horz-block {
+	> li { float: left;}
+	a  { display: block;}
+}
+.menu-horz-inline > li {
+	display: inline-block;
+}
+.menu-vert > li {
+	display : block;
+	float: none; 
+}
+
+
+@media (min-width: $screen-sm-min) {
+	.menu-horz-flex-sm {
+		display: flex;
+		> li {
+			flex: 1;
+		}
+	}
+
+	.menu-vert-flex-sm {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Navigation Layout
+	.menu-horz-block-sm {
+		> li { float: left;}
+		a  { display: block;}
+	}
+	.menu-horz-inline-sm > li {
+		display: inline-block;
+	}
+	.menu-vert-sm > li {
+		display : block;
+		float: none; 
+	}
+}
+@media (max-width: $screen-xs-max) {
+	.menu-horz-flex-xs {
+		display: flex;
+	}
+
+	.menu-vert-flex-xs {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Navigation Layout
+	.menu-horz-block-xs {
+		> li { float: left;}
+		a  { display: block;}
+	}
+	.menu-horz-inline-xs > li {
+		display: inline-block;
+	}
+	.menu-vert-xs > li {
+		display : block;
+		float: none; 
+	}
+}
+
+
+.has-background {
+	background-color: $brand-primary;
+	color: $white;
+}
+.has-background-alt {
+	background-color: $gray-darker;
+	color: $white;
+}
+
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+
+.block {
+	display: block;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+
+.relative {
+	position: relative;
+}
+
+
+// Flexbox Utility
+// -------------------------
+.flex {
+	display: flex;
+}
+ 
+.baseline-none {	margin-bottom: 0;}
+
+.baseline-xs,
+.baseline-grid  {	margin-bottom: $grid-gutter-width;}
+
+.baseline-sm {	margin-bottom: $grid-gutter-width*2;}
+.baseline-md {	margin-bottom: $grid-gutter-width*3;}
+.baseline-lg {	margin-bottom: $grid-gutter-width*4;}

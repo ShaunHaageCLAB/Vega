@@ -1,0 +1,55 @@
+$accordion-padding: 10px;
+
+.accordion__menu {}
+
+	.accordion__item {}
+
+		.accordion__link {
+			background-color: $orange;
+			display: flex;
+			&:visited {
+				color: $white;
+			}
+			&:hover {
+				background-color: $dark-orange;
+			}
+			.is-active & {
+				background: $teal;
+			}
+		}
+
+			.accordion__title {
+				font-weight: bold;
+				padding: $accordion-padding;
+				text-transform: uppercase;
+				color: $white;
+				flex: 1 1 auto;
+			}
+
+			.accordion__icon {
+				@include fa-icon();
+				font-size: 24px;
+				padding: 7px $accordion-padding 0 0;
+				&:before {
+					content: $fa-var-plus-circle;
+				}
+				.is-active &:before {
+					content: $fa-var-minus-circle;
+				}				
+			}
+		
+		.accordion__panel {
+			padding: 0 $accordion-padding;
+			background-color: $pale-teal;
+			margin-bottom: $accordion-padding;
+			
+			max-height: 0;
+			overflow: hidden;
+			transition: all 200ms $transition;
+
+			.is-active & {
+				max-height: 50vh;
+				padding: $accordion-padding;
+				overflow-y: auto;
+			}
+		}

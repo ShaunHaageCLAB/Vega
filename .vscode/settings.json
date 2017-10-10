@@ -1,0 +1,7 @@
+{
+	"files.exclude": {
+        "**/css": true,
+        "**/sharepoint": true,
+        "**/scripts": true
+    }
+}
