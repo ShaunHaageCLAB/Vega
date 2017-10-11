@@ -36,11 +36,11 @@
 				<ul class="navbar-nav level-1-list">
 					<li class="level-1-item">
 						<a class="level-1-link / js-has-children" href="#">Who we are</a>
-						<!--#include file="../dropdown/menu-4-columns.html"-->
+						<?php include("includes/dropdown/menu-4-columns.php"); ?>
 					</li>
 					<li class="level-1-item">
 						<a class="level-1-link / js-has-children" href="#">Courses</a>					
-						<!--#include file="../dropdown/menu-3-columns.html"-->
+						<?php include("includes/dropdown/menu-3-columns.php"); ?>
 					</li>
 					<li class="is-active"><a  class="level-1-link" href="#">Student Life</a></li>
 					<li class="level-1-item"><a  class="level-1-link" href="#">Contact Us</a></li>

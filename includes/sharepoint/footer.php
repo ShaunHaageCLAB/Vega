@@ -19,7 +19,7 @@
 				<div id="DeltaPlaceHolderFooter"></div>
 			</div>
 		</div>
-		<!--#include file="../template/footer.html"-->
+		<?php include("includes/template/footer.php"); ?>
 	</div>
 </main>
 			
