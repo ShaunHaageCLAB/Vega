@@ -282,7 +282,7 @@
 
 <main class="body">
 	
-	<!--#include file="../template/header.html"-->
+<?php include("includes/template/header.php"); ?>
 
 	<div class="main-content">
 		<div class="container" id="s4-workspace">
