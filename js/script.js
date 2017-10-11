@@ -21,6 +21,7 @@ var VEGA = {
 
 		
 		$('html').removeClass('no-js').addClass('js');
+		// $('body').addClass('has-navigation-active');
 
 		// Homepage animation
 		// -----------------------------------------------------------
@@ -33,6 +34,30 @@ var VEGA = {
 			panels.top = []; //empty our array
 			getPanelDimensions();
 		});		
+
+		var menulevel = 1;
+		$('#site-navigation').on('click', '.js-has-children', function () {
+			var $el 	= $(this),
+				$parent = $el.parent('li');
+			
+			menulevel++;
+			$parent.addClass('is-expanded');
+			$cache.navigation.attr('data-menu', menulevel);
+			
+			return false;			
+		});
+
+		$('#site-navigation').on('click', '.js-menu-back', function () {
+			var $el 	= $(this),
+				$parent = $el.parent('li');
+			
+			menulevel--;
+			$parent.removeClass('is-expanded');
+			$cache.navigation.attr('data-menu', menulevel);
+			
+			return false;			
+		});
+			
 
 
 		function getPanelDimensions() {

@@ -19,25 +19,31 @@
 
 	<div class="navbar navbar-primary">
 		<div class="container">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Enquire</a></li>
-				<li class="visible-md-block visible-lg-block"><a href="#">Apply</a></li>
-				<li class="visible-md-block visible-lg-block"><a href="#">Register</a></li>
-				<li><a href="#">My Vega</a></li>
+			<ul class="navbar-nav level-1-list">
+				<li class="is-active"><a  class="level-1-link" href="#">Enquire</a></li>
+				<li class="visible-md-block visible-lg-block"><a  class="level-1-link" href="#">Apply</a></li>
+				<li class="visible-md-block visible-lg-block"><a  class="level-1-link" href="#">Register</a></li>
+				<li><a  class="level-1-link" href="#">My Vega</a></li>
 			</ul>
 		</div>
 	</div>
 
 	
-	<nav class="navbar navbar-secondary" role="navigation" id="site-navigation">
+	<nav class="navbar navbar-secondary" role="navigation" id="site-navigation" data-menu='1'>
 		<div class="container">
-			<ul class="nav navbar-nav">
-				<li><a href="#">Who we are</a></li>
-				<li><a href="#">Courses</a></li>
-				<li class="active"><a href="#">Student Life</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">Admissions</a></li>
-				<li><a href="#">News and Events</a></li>
+			<ul class="navbar-nav level-1-list">
+				<li class="level-1-item">
+					<a class="level-1-link / js-has-children" href="#">Who we are</a>
+					<!--#include file="../dropdown/menu-4-columns.html"-->
+				</li>
+				<li class="level-1-item">
+					<a class="level-1-link / js-has-children" href="#">Courses</a>					
+					<!--#include file="../dropdown/menu-3-columns.html"-->
+				</li>
+				<li class="is-active"><a  class="level-1-link" href="#">Student Life</a></li>
+				<li class="level-1-item"><a  class="level-1-link" href="#">Contact Us</a></li>
+				<li class="level-1-item"><a  class="level-1-link" href="#">Admissions</a></li>
+				<li class="level-1-item"><a  class="level-1-link" href="#">News and Events</a></li>
 				<li class="toggle__search-wrapper">
 					<button class="toggle__search js-toggle-search">
 						<i class="fa fa-search" aria-hidden="true"></i>
