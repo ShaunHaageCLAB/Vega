@@ -3,13 +3,14 @@ var VEGA = {
 		"use strict";
 
         var $cache = { 
-            body: 		$('body'),
-            navigation: $("#site-navigation"),
-            header:		$("#site-header"),  
-            content: 	$('#s4-workspace'), 
-			footer: 	$('#site-footer'),
-			carousel :	$('.js-mobile-carousel'),
-			panels : 	$('.js-panel-animation')
+            body: 			$('body'),
+            navigation: 	$("#secondary-navigation"),
+            nav_wrapper: 	$("#site-navigation"),
+            header:			$("#site-header"),  
+            content: 		$('#s4-workspace'), 
+			footer: 		$('#site-footer'),
+			carousel :		$('.js-mobile-carousel'),
+			panels : 		$('.js-panel-animation')
 		};
 		
 		var panels = {
@@ -21,11 +22,9 @@ var VEGA = {
 
 		
 		$('html').removeClass('no-js').addClass('js');
-		// $('body').addClass('has-navigation-active');
 
 		// Homepage animation
 		// -----------------------------------------------------------
-		
 		// Get initial page dimensions
 		getPanelDimensions();
 
@@ -34,7 +33,19 @@ var VEGA = {
 			panels.top = []; //empty our array
 			getPanelDimensions();
 		});		
+		
+		function getPanelDimensions() {
+			panels.animationOffset = $(window).height() / 3;
+			
+			$cache.panels.each( function() {
+				panels.top.push($(this).offset().top);
+				panels.id.push($(this).attr('id'));
+			});
+		}
 
+
+		// Mobile Flyout menu
+		// -----------------------------------------------------------
 		var menulevel = 1;
 		$('#site-navigation').on('click', '.js-has-children', function () {
 			var $el 	= $(this),
@@ -60,18 +71,10 @@ var VEGA = {
 			
 
 
-		function getPanelDimensions() {
-			panels.animationOffset = $(window).height() / 3;
-			
-			$cache.panels.each( function() {
-				panels.top.push($(this).offset().top);
-				panels.id.push($(this).attr('id'));
-			});
-		}
 
 		// Fixed Navigation bar
 		// -----------------------------------------------------------
-		var navbarOffset = $('.navbar-secondary').offset();
+		var navbarOffset = $cache.nav_wrapper.offset();
 		$(window).scroll(function() {
 			var scrollposition = $(window).scrollTop();
  
@@ -103,7 +106,9 @@ var VEGA = {
 			}
 
 		});
+
 		
+
 		// Accordian Menu
 		// -----------------------------------------------------------
 		$cache.content.on('click', '.js-accordion .accordion__title', function() {
@@ -118,6 +123,8 @@ var VEGA = {
 			
 			return false; 
 		});
+
+
 
 		// Toggle Navigation menu for mobile and Tablet portrait
 		// -----------------------------------------------------------

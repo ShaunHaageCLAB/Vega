@@ -23,7 +23,7 @@
 
 // Navigation
 // =======================================================	
-.navbar-secondary {
+.navbar-wrapper{
 	top: 0;
 	left: 0;
 	right: 0;
@@ -55,7 +55,7 @@
 		
 		&:hover {
 			.level-2-wrapper {
-				max-height: 20vh;				
+				max-height: 500px;				
 			}
 
 			.level-1-link {
