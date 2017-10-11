@@ -1,0 +1,129 @@
+// Page Header
+// =======================================================
+.site-header {
+	height: $header-height;
+	display: flex;
+	flex-direction: column;
+	border-top: solid 5px $teal;
+
+	.andrew_fairlie {
+		flex: 1 1 auto;
+	}
+}	
+
+.navbar-brand-wrapper {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+
+// Navigation
+// =======================================================	
+.navbar-wrapper{
+	top: 0;
+	left: 0;
+	right: 0;
+
+	.has-reduced-menu & {
+		position: fixed;
+		z-index: $zindex-navbar; 
+	}
+}
+
+
+
+
+// Dropdowmn Menus
+// =======================================================	
+.level-2-wrapper {
+	position: absolute;
+	z-index: $zindex-dropdown;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: $red;
+	max-height: 0;
+	overflow: hidden;
+	transition: 200ms max-height $transition;
+}
+
+	.level-1-item {
+		
+		&:hover {
+			.level-2-wrapper {
+				max-height: 500px;				
+			}
+
+			.level-1-link {
+				background-color: darken($red, 5%);				
+			}
+		}
+	}
+
+	.level-2-wrapper .container {
+		display: flex;
+	}
+
+	.navbar-secondary {
+		position: relative;
+
+		.level-1-item {
+			position: static;
+		}		
+	}
+
+		.level-1-list,
+		.level-2-list,
+		.level-3-list  {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.level-2-list {
+			flex: 1 1 auto;
+			max-width: 25%;
+			margin: 0 10px;
+			padding: 15px 0;
+		}
+
+			.level-1-link,
+			.level-2-link,
+			.level-3-link  {
+				text-transform: uppercase;
+				font-weight: bold;		
+				color: $white;
+				display: block;
+				
+				&:hover,
+				&:focus {
+					color: $white;
+					background-color: darken($red, 5%);;
+					text-decoration: none;
+				}
+
+				&:visited {
+					color: $white;
+				}
+
+				.is-active > & {
+					&, &:hover, &:focus {
+						color: $white;
+						background-color: darken($red, 5%);
+					}
+				}				
+			}
+
+			.level-2-link,
+			.level-3-link {
+				padding: 5px;
+			}
+
+			.js-menu-back{
+				display: none !important;
+			}
+				

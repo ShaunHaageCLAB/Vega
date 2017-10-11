@@ -31,8 +31,14 @@
 @import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
 @import "bootstrap/input-groups";
-@import "bootstrap/navs";
+// @import "bootstrap/navs";
 @import "bootstrap-custom/navbar"; // Custom
+@media (min-width: $grid-float-breakpoint) {
+	@import "bootstrap-custom/navbar-desktop"; // Custom
+}
+@media (max-width: $grid-float-breakpoint) {
+	@import "bootstrap-custom/navbar-mobile"; // Custom
+}
 // @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
 @import "bootstrap/pager";
