@@ -13,39 +13,28 @@
 // Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
-// @import "bootstrap/glyphicons";
 @import "fontawesome/font-awesome";
+// @import "bootstrap/glyphicons";
+
+
 // Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap-custom/type"; // Custom
 // @import "bootstrap/code";
 // @import "bootstrap/grid";  // Replace defauult floats grid with a flexbox solution
-@import "boostrap-flexbox-grid/bootstrap-grid-flexbox"; // https://github.com/ngengs/bootstrap-grid-flexbox
-
 // @import "bootstrap/tables";
+@import "bootstrap/scaffolding";
+@import "bootstrap-custom/type"; // Custom
+@import "boostrap-flexbox-grid/bootstrap-grid-flexbox"; // https://github.com/ngengs/bootstrap-grid-flexbox
 @import "bootstrap-custom/forms";
 @import "bootstrap-custom/buttons";  // Custom
 
+
 // Components
 // @import "bootstrap/component-animations";
-@import "bootstrap/dropdowns";
-@import "bootstrap/button-groups";
-@import "bootstrap/input-groups";
 // @import "bootstrap/navs";
-@import "bootstrap-custom/navbar"; // Custom
-@media (min-width: $grid-float-breakpoint) {
-	@import "bootstrap-custom/navbar-desktop"; // Custom
-}
-@media (max-width: $grid-float-breakpoint) {
-	@import "bootstrap-custom/navbar-mobile"; // Custom
-}
 // @import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
 // @import "bootstrap/labels";
 // @import "bootstrap/badges";
 // @import "bootstrap/jumbotron";
-@import "bootstrap-custom/jumbotron"; // Custom
 // @import "bootstrap/thumbnails"; 
 // @import "bootstrap/alerts";
 // @import "bootstrap/progress-bars";
@@ -56,6 +45,19 @@
 // @import "bootstrap/wells";
 // @import "bootstrap/close";
 
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap-custom/navbar"; // Custom
+@media (min-width: $grid-float-breakpoint) {
+	@import "bootstrap-custom/navbar-desktop"; // Custom
+}
+@media (max-width: $grid-float-breakpoint) {
+	@import "bootstrap-custom/navbar-mobile"; // Custom
+}
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap-custom/jumbotron"; // Custom
  
 // Custom Components
 @import "components-custom/structure";

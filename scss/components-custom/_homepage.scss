@@ -7,7 +7,7 @@
 		height: calc(100vh -  #{$header-height});
 	}
 	@media (max-width: $screen-sm-max) {
-		height: calc(100vh -  #{$navbar-height-mobile});
+		// height: calc(100vh -  #{$navbar-height-mobile});
 	}
 }
 #home-specialisations {
