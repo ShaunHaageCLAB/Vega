@@ -4,10 +4,6 @@
 	background-color: $white;
 	z-index: $zindex-menu-toggle;
 }
-	.anchor {
-		position: relative; 
-		top: -$header-height;
-	}
 
 .navbar-nav {
 	> .is-active > a {

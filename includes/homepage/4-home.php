@@ -1,4 +1,6 @@
 <div id="home-students" class="site-content / homepage__panel js-panel-animation">
+	<a id="home-students-anchor" class="anchor"></a>
+	
     <div class="container">
 		
 		<div class="row">

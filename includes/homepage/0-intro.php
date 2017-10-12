@@ -1,4 +1,5 @@
-<div id="home-intro" class="site-content / homepage__panel">
+<div id="home-intro" class="site-content / homepage__panel js-panel-animation">
+	<a id="home-intro-anchor" class="anchor-full-header"></a>
 	<div class="container">
 		<div class="homepage__panel-intro-wrapper / text-center">
 			<h2 class="hompage__panel-title-intro / text-white ">DESIGN | BRAND | BUSINESS</h2>

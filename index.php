@@ -11,4 +11,6 @@
 <?php include("includes/homepage/4-home.php"); ?>
 <?php include("includes/homepage/5-home.php"); ?>
 
+<?php include("includes/homepage/panel-navigation.php"); ?>
+
 <?php include("includes/sharepoint/footer.php"); ?>

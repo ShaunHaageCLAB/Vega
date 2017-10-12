@@ -1,4 +1,6 @@
 <div id="home-news" class="site-content / homepage__panel js-panel-animation">
+	<a id="home-news-anchor" class="anchor"></a>
+	
     <div class="container">
 		<h2 data-animation="news-title" class="h1 text-uppercase / homepage__panel-title-xs / baseline-md">News and Events</h2>
 		

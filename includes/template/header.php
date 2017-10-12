@@ -1,6 +1,4 @@
-<header class="site-header" id="site-header">
-	
-	<div id="page-top"></div>
+<header class="site-header" id="site-header">	
 
 	<div class="andrew_fairlie">
 		<div class="navbar-brand-wrapper">

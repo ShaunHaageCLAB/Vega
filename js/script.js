@@ -17,7 +17,8 @@ var VEGA = {
 			top : [],
 			id : [],
 			animatedCount : 0,
-			animationOffset : 0
+			animationOffset : 0,
+			windowHeight : 0
 		};
 
 		
@@ -36,7 +37,9 @@ var VEGA = {
 		
 		function getPanelDimensions() {
 			panels.animationOffset = $(window).height() / 3;
-			
+
+			panels.windowHeight = $(window).height();
+
 			$cache.panels.each( function() {
 				panels.top.push($(this).offset().top);
 				panels.id.push($(this).attr('id'));
@@ -68,46 +71,96 @@ var VEGA = {
 			
 			return false;			
 		});
-			
 
 
 
-		// Fixed Navigation bar
+		// Scroll Events
 		// -----------------------------------------------------------
-		var navbarOffset = $cache.nav_wrapper.offset();
+		
+		// Set inital page scroll location
+		scrollPanels();
+
+		// Update on page scroll
 		$(window).scroll(function() {
-			var scrollposition = $(window).scrollTop();
- 
-			if(scrollposition > navbarOffset.top) {
-				$cache.body.addClass('has-reduced-menu');
-			} else {
-				$cache.body.removeClass('has-reduced-menu');
-			}
-
-			// Animated Homepage panels
-			if(panels.animatedCount <= panels.top.length) {
-				for (var index = 0; index < panels.top.length; index++) {
-					var $element = $('#' + panels.id[index]);
-
-					if(scrollposition >= panels.top[index] - panels.animationOffset) {
-						if( !$element.hasClass('is-animated') ) {
-							$element.addClass('is-animated');
-							panels.animatedCount++;
-						}
-					} 
-					
-					if(scrollposition <= panels.top[index] - panels.animationOffset) {				
-						if( $element.hasClass('is-animated') ) {
-							$element.removeClass('is-animated');
-							panels.animatedCount--;
-						}						
-					}
-				}
-			}
-
+			scrollPanels();
 		});
 
+		function scrollPanels() {
+			// Fixed Navigation bar
+			var scrollposition = $(window).scrollTop();
+
+		   if(scrollposition > panels.windowHeight/2) {
+			   $cache.body.addClass('has-reduced-menu');
+		   } else {
+			   $cache.body.removeClass('has-reduced-menu');
+		   }
+
+		   // Animated Homepage panels
+		   if(panels.animatedCount <= panels.top.length) {
+			   for (var index = 0; index < panels.top.length; index++) {
+				   var $element = $('#' + panels.id[index]);					
+
+				   if(scrollposition >= panels.top[index] - panels.animationOffset) {
+					   if( !$element.hasClass('is-animated') ) {
+						   $element.addClass('is-animated');
+						   panels.animatedCount++;							
+						   updatePanelNavigation(index);
+					   }
+				   } 
+				   
+				   if(scrollposition <= panels.top[index] - panels.animationOffset) {				
+					   if( $element.hasClass('is-animated') ) {
+						   $element.removeClass('is-animated');
+						   panels.animatedCount--;							
+						   updatePanelNavigation(index - 1);
+					   }						
+				   }
+			   }
+		   }
+		}
+
+		function updatePanelNavigation(index) {			
+			console.log(index);
+			if(index < 0) index = 0;
+			
+			$('#panel-navigation')
+				.find('.panel_navigation__item:eq('+ index  +')')
+				.addClass('is-active').siblings('li').removeClass('is-active');
+		}
+
 		
+
+		// Floating fixed panel navigation
+		// -----------------------------------------------------------
+		$cache.content.on('click', '.js-panel_navigation__link', function() {
+			var $el 		= $(this),
+				$parent		= $el.parents('li'),
+				$siblings 	= $parent.siblings('li'),
+				target 		= $(this.hash);
+				
+			$parent.addClass('is-active');
+			$siblings.removeClass('is-active');
+
+			
+			$('html, body').animate({
+				scrollTop: target.offset().top
+			}, 500);
+
+			event.preventDefault();			
+
+		});
+		
+		// Specialisations menu
+		// -----------------------------------------------------------
+		$cache.content.on('mouseenter', '.js-specialisation-hover', function() {
+			var $el 		= $(this),
+				$container 	= $('#home-specialisations'),
+				data 		= $el.data();
+			
+			$container.css({
+				backgroundColor : '#'+data.color
+			});
+		});
 
 		// Accordian Menu
 		// -----------------------------------------------------------
@@ -118,9 +171,7 @@ var VEGA = {
 			
 			$parent.toggleClass('is-active');
 			$siblings.removeClass('is-active');
-
-			console.log($el);
-			
+		
 			return false; 
 		});
 

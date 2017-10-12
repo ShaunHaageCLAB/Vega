@@ -6,6 +6,30 @@
 	flex-direction: column;
 	border-top: solid 5px $teal;
 
+	top: 0;
+	left: 0;
+	right: 0;
+	position: fixed;	
+	z-index: $zindex-navbar;
+
+	.has-reduced-menu & {
+		height: $header-height-reduced;
+
+		.navbar-brand-logo {
+			height: 50px;
+			margin-bottom: 10px;
+		}
+
+		.navbar-brand-wrapper {
+			margin-top: 10px;
+		}
+
+		.level-1-link,
+		.toggle__search {
+			line-height: 40px;
+		}
+	}
+
 	.andrew_fairlie {
 		flex: 1 1 auto;
 	}
@@ -14,24 +38,35 @@
 .navbar-brand-wrapper {
 	text-align: center;
 	margin-top: 20px;
+
 }
+	.navbar-brand-logo {
+		height: 96px;
+		display: block;
+		margin: auto;
+	}
+
 
 .navbar-toggle {
 	display: none;
 }
 
+body {
+	padding-top: $header-height;
+}
+
+.site-header,
+.navbar-brand-logo,
+.navbar-brand-wrapper {
+	transition: all 200ms $transition;
+}
+
+
 
 // Navigation
 // =======================================================	
-.navbar-wrapper{
-	top: 0;
-	left: 0;
-	right: 0;
+.site-header{
 
-	.has-reduced-menu & {
-		position: fixed;
-		z-index: $zindex-navbar; 
-	}
 }
 
 

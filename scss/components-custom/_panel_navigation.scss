@@ -1,0 +1,30 @@
+.panel_navigation__menu {
+	position: fixed;
+	right: 40px;
+	top: 50vh;
+}
+
+
+	.panel_navigation__item {
+		margin-bottom: 35px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.js-panel_navigation__link {
+		display: block;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background-color: $white;
+		border: solid 4px transparent;
+		transition: all 200ms $transition;
+		
+		.is-active & {
+			border-color: $white;
+			background-color: transparent;
+			transform: scale(1.2);
+		}
+
+	}

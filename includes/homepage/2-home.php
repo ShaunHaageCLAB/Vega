@@ -1,4 +1,6 @@
 <div id="home-brand-challenge" class="site-content / homepage__panel js-panel-animation">
+	<a id="home-brand-challenge-anchor" class="anchor"></a>
+	
     <div class="container">
 
 		<div class="row baseline-grid / text-center-xs text-center-sm">

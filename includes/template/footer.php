@@ -2,7 +2,7 @@
 	<div class="container">
 
 
-		<a href="#page-top" class="js-btn-back-to-top"><div class="sr-only">Back to top</div></a>
+		<a href="#home-intro-anchor" class="js-btn-back-to-top"><div class="sr-only">Back to top</div></a>
 
 		<div class="footer__logo-wrapper">
 			<img src="img/logo_vega_white.png" alt="Vega Logo White" class="">
