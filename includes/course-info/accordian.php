@@ -1,6 +1,6 @@
-<h2>BCom Digital Marketing Degree | Digital Marketing</h2>
+<h2 class="text-teal h2-light">BCom Digital Marketing Degree | Digital Marketing</h2>
 
-<p>3 years full-time | NQF level 7 | 370 credits | saqa id: 90742</p>
+<p class="text-gray ">3 years full-time | NQF level 7 | 370 credits | saqa id: 90742</p>
 
 <ol class="accordion__menu js-accordion / menu-vert-flex">
 	<li class="accordion__item">

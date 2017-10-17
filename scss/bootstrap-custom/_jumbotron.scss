@@ -11,26 +11,35 @@
     .container {
 		background-repeat: no-repeat;
 		background-position: bottom right;
+		display: flex;
+		align-items: center;		
 	}
 
 	@media screen and (max-width: $screen-xs-max) {
 		.container {
-			padding-top: $jumbotron-padding/4;
-			padding-bottom: $jumbotron-padding/4;
-			background-size: 70% ;
-		}
+			height: 150px;
+		}		
+
+        h1,
+        .h1 {
+            font-size: $jumbotron-heading-font-size / 2;
+        }		
 	}
 	
     @media screen and (min-width: $screen-sm-min) {
 		.container {
-			padding-top: $jumbotron-padding;
-			height: 300px;		
+			height: 300px;
 		}
         h1,
         .h1 {
             font-size: $jumbotron-heading-font-size;
         }
     }
+}
+
+.jumbotron__icon {
+	vertical-align: middle;
+	display: inline-block;
 }
 
 .jumbotron__green {
@@ -50,17 +59,26 @@
     color: $white;
 }
 
-.container {
-	.jumbotron__jhb & {
-		background-image: url('../img/banner_contact-jhb.png');
-	}	
-	.jumbotron__cpt & {
-		background-image: url('../img/banner_contact-cpt.png');
-	}	
-	.jumbotron__dbn & {
-		background-image: url('../img/banner_contact-dbn.png');
-	}	
-	.jumbotron__pta & {
-		background-image: url('../img/banner_contact-pta.png');
-	}	
+@media screen and (min-width: $screen-sm-min) {
+	.container {
+		.jumbotron__jhb & {
+			background-image: url('../img/banner_contact-jhb.png');
+		}	
+		.jumbotron__cpt & {
+			background-image: url('../img/banner_contact-cpt.png');
+		}	
+		.jumbotron__dbn & {
+			background-image: url('../img/banner_contact-dbn.png');
+		}	
+		.jumbotron__pta & {
+			background-image: url('../img/banner_contact-pta.png');
+		}	
+		
+		.jumbotron__course-info & {
+			background-image: url('../img/course-info.png');
+			background-position: left center;
+			padding-left: 150px;
+		}
+	}
 }
+

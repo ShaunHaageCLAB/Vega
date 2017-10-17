@@ -9,10 +9,10 @@
 <div class="container">
 
 	<div class="row">
-		<div class="col-lg-8">
+		<div class="col-lg-8 col-md-8">
 			<?php include("includes/course-info/accordian.php"); ?>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-md-4">
 			<?php include("includes/course-info/sidebar.php"); ?>
 		</div>
 	</div>

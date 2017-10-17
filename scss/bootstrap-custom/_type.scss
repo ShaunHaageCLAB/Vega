@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6,
 	text-transform: uppercase;
 }
 .h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 h1, .h1, .h1-uppercase, .h1-light,
@@ -156,6 +156,14 @@ mark,
 
 .text-color-inverse {
 	color: $white;
+}
+
+.text-teal {
+	color: $teal;
+}
+
+.text-gray {
+	color: $gray-darker;
 }
 
 @include text-emphasis-variant('.text-primary', $brand-primary);

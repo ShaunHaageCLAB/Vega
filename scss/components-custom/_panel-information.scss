@@ -1,0 +1,31 @@
+$panel-padding: 12px 24px;
+
+.panel__wrapper {
+	background-color: $gray;
+	@extend  .baseline-sm;
+}
+
+	.panel__title {
+		background-color: $gray-darker;
+		color: $white;
+		margin: 0;
+		padding: $panel-padding;
+		text-transform: uppercase;
+		@extend .h5;
+	}
+
+		.panel__content {
+			padding: $panel-padding;
+			padding-bottom: 0;
+			overflow: hidden;
+		}
+
+			.panel__sub-title {				
+				@extend .h5;
+				text-transform: uppercase;
+			}
+
+
+			.flex-align-center {
+				align-self: center;
+			}
