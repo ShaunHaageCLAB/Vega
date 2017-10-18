@@ -14,7 +14,7 @@
 							<img src="img/titles/title_alumni-1.png" alt="Alu" class="title_slice_inline">
 						</div>
 						<div data-animation="mni" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-							<img src="img/titles/title_alumni-2.png" alt="mni" class="title_slice_inline">
+							<img src="img/titles/title_alumni-2.png" alt="mni" class="title_slice_inline slice_translate-left">
 						</div>
 					</div>		
 				</a>
@@ -32,7 +32,7 @@
 							<img src="img/titles/title_student-1.png" alt="Stude" class="title_slice_inline ">							
 						</div>
 						<div data-animation="ntlife" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-							<img src="img/titles/title_student-2.png" alt="nt life" class="title_slice_inline">							
+							<img src="img/titles/title_student-2.png" alt="nt life" class="title_slice_inline slice_translate-left">							
 						</div>
 					</div>
 

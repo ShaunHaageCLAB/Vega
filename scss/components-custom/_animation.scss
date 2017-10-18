@@ -2,8 +2,6 @@
 
 // Animation
 // ---------------------------------------------
-.homepage__panel-campuses-title-wrapper {}
-.hompage__panel-title-campuses {}	
 .title_slice {					display: block;	}
 .title_slice_inline {			display: inline-block;	}
 .title_slice_wrapper {			font-size: 0;	}
@@ -34,7 +32,7 @@
 		[data-animation=specialisation-icon-9],
 		[data-animation=specialisation-icon-10] {
 			opacity: 0;
-			transform: scale(2);
+			transform: scale(1.5);
 		}
 		[data-animation=specialisation-title-1],
 		[data-animation=specialisation-title-2],
@@ -270,13 +268,6 @@
 }
 
 
-
-
-
-
-
-
-
 // Mobile Only	
 @media (max-width: $screen-sm-max) {
 	.title_slice,
@@ -284,25 +275,6 @@
 		height: 20px;
 		width: auto;
 		max-width: none
-	}
-
-	.is-animated {
-		[data-animation='1'] {
-			margin-top: 20px;
-		}
-
-		[data-animation='6'] {
-			margin-top: 20px;
-			margin-bottom: 40px;
-		}
-
-		[data-animation='7'] {
-			margin-top: 20px;
-		}
-			
-		[data-animation='8'] {
-			margin-top: 40px;
-		}
 	}
 }
 
