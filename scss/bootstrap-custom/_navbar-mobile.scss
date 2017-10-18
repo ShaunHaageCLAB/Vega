@@ -62,6 +62,45 @@ body {
 }
 
 
+// Primary navbar
+// ----------------------------------------------
+.navbar-primary {
+	background-color: $navbar-default-bg;
+
+	.navbar-nav {
+		> li {
+			margin: 0 1px;
+
+			&:nth-of-type(1) {
+				a {
+					background: $green;
+					color: $white;
+				}
+			} 
+			&:nth-of-type(4) {
+				a {
+					background: $dark-red;
+					color: $white;
+				}
+			}
+		}
+
+		> li > a {
+			font-size: 1.8rem;
+		}
+	}
+
+    > .disabled > a {
+		&, &:hover, &:focus {
+			color: $navbar-default-link-disabled-color;
+			background-color: $navbar-default-link-disabled-bg;
+		}
+    }
+}
+
+
+
+
 .toggle__search-wrapper {
 	display: none !important;
 }

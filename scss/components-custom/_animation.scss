@@ -22,6 +22,35 @@
 @media (min-width: $screen-md-min) {
 
 	.js {
+		// Specialisations
+		[data-animation=specialisation-icon-1],
+		[data-animation=specialisation-icon-2],
+		[data-animation=specialisation-icon-3],
+		[data-animation=specialisation-icon-4],
+		[data-animation=specialisation-icon-5],
+		[data-animation=specialisation-icon-6],
+		[data-animation=specialisation-icon-7],
+		[data-animation=specialisation-icon-8],
+		[data-animation=specialisation-icon-9],
+		[data-animation=specialisation-icon-10] {
+			opacity: 0;
+			transform: scale(2);
+		}
+		[data-animation=specialisation-title-1],
+		[data-animation=specialisation-title-2],
+		[data-animation=specialisation-title-3],
+		[data-animation=specialisation-title-4],
+		[data-animation=specialisation-title-5],
+		[data-animation=specialisation-title-6],
+		[data-animation=specialisation-title-7],
+		[data-animation=specialisation-title-8],
+		[data-animation=specialisation-title-9],
+		[data-animation=specialisation-title-10] {
+			opacity: 0;
+		}
+
+
+
 		// Brand challenge
 		[data-animation=brand-challenge-banner],
 		[data-animation=brand-challenge-title],
@@ -88,6 +117,44 @@
 	}
 
 	.is-animated {
+		// Specialisations
+		[data-animation=specialisation-icon-1],
+		[data-animation=specialisation-icon-2],
+		[data-animation=specialisation-icon-3],
+		[data-animation=specialisation-icon-4],
+		[data-animation=specialisation-icon-5],
+		[data-animation=specialisation-icon-6],
+		[data-animation=specialisation-icon-7],
+		[data-animation=specialisation-icon-8],
+		[data-animation=specialisation-icon-9],
+		[data-animation=specialisation-icon-10] {
+			opacity: 1;
+			transform: scale(1);
+		}
+		[data-animation=specialisation-title-1],
+		[data-animation=specialisation-title-2],
+		[data-animation=specialisation-title-3],
+		[data-animation=specialisation-title-4],
+		[data-animation=specialisation-title-5],
+		[data-animation=specialisation-title-6],
+		[data-animation=specialisation-title-7],
+		[data-animation=specialisation-title-8],
+		[data-animation=specialisation-title-9],
+		[data-animation=specialisation-title-10] {
+			opacity: 1;
+		}
+		[data-animation=specialisation-icon-1], [data-animation=specialisation-title-1]  { transition-delay: 0;}
+		[data-animation=specialisation-icon-2], [data-animation=specialisation-title-2]  { transition-delay: 100ms;}
+		[data-animation=specialisation-icon-3], [data-animation=specialisation-title-3]  { transition-delay: 200ms;}
+		[data-animation=specialisation-icon-4], [data-animation=specialisation-title-4]  { transition-delay: 300ms;}
+		[data-animation=specialisation-icon-5], [data-animation=specialisation-title-5]  { transition-delay: 400ms;}
+		[data-animation=specialisation-icon-6], [data-animation=specialisation-title-6]  { transition-delay: 500ms;}
+		[data-animation=specialisation-icon-7], [data-animation=specialisation-title-7]  { transition-delay: 600ms;}
+		[data-animation=specialisation-icon-8], [data-animation=specialisation-title-8]  { transition-delay: 700ms;}
+		[data-animation=specialisation-icon-9], [data-animation=specialisation-title-9]  { transition-delay: 800ms;}
+		[data-animation=specialisation-icon-10], [data-animation=specialisation-title-10] { transition-delay: 900ms;}
+
+
 		// Brand challenge
 		[data-animation=brand-challenge-banner] {
 			transform: translateX(0);

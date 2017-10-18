@@ -71,6 +71,81 @@ body {
 
 
 
+// Primary navbar
+// ----------------------------------------------
+.navbar-primary {
+	background-color: $navbar-default-bg;
+
+	.navbar-nav {
+		> li {
+			margin: 0 1px;
+
+			&:nth-of-type(1) {
+				a {
+					color: $green;
+				}
+				&.is-active a,
+				a:hover {
+					background: $green;
+					color: $white;
+				}
+			} 
+			&:nth-of-type(2) {
+				a {
+					color: $dark-red;
+				}
+				&.is-active a,
+				a:hover {
+					background: $dark-red;
+					color: $white;
+				}
+			}
+			&:nth-of-type(3) {
+				a {
+					color: $orange;
+				}
+				&.is-active a,
+				a:hover {
+					background: $orange;
+					color: $white;
+				}
+			}
+			&:nth-of-type(4) {
+				a {
+					color: $teal;
+				}
+				&.is-active a,
+				a:hover {
+					background: $teal;
+					color: $white;
+				}
+			}
+		}
+
+		> li > a {
+			background-color: $navbar-default-link-bg;
+			color: $navbar-default-link-color;
+			font-size: 1.8rem;
+		}
+	}
+
+
+    > .is-active > a {
+		&, &:hover, &:focus {
+			color: $navbar-default-link-active-color;
+			background-color: $navbar-default-link-active-bg;
+		}
+	}
+	
+    > .disabled > a {
+		&, &:hover, &:focus {
+			color: $navbar-default-link-disabled-color;
+			background-color: $navbar-default-link-disabled-bg;
+		}
+    }
+}
+
+
 
 // Dropdowmn Menus
 // =======================================================	
