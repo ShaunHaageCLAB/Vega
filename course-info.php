@@ -6,7 +6,7 @@
 
 <?php include("includes/course-info/banner.php"); ?>
 
-<div class="container / theme-teal">
+<div class="container / theme-teal"> 
 <!-- 
 Colour themes : see _colour-themes.scss
 <div class="container / theme-orange">

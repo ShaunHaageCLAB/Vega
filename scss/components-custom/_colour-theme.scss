@@ -1,4 +1,4 @@
-@mixin color-theme($theme-name, $color-primary, $color-hover, $color-secondary) {
+@mixin color-theme($theme-name, $color-primary, $color-hover, $color-secondary) { 
 	
 	.theme-#{$theme-name} {
 				
@@ -40,7 +40,7 @@
 			}		
 		}
 	} 
-}
+} 
 
 @include color-theme('orange', 	$orange, 	$dark-orange, 	$pale-yellow);
 @include color-theme('magenta', $magenta, 	$dark-magenta, 	$pale-yellow);

@@ -14,37 +14,15 @@
 @import "bootstrap/normalize";
 @import "bootstrap/print";
 @import "fontawesome/font-awesome";
-// @import "bootstrap/glyphicons";
-
 
 // Core CSS
-// @import "bootstrap/code";
-// @import "bootstrap/grid";  // Replace defauult floats grid with a flexbox solution
-// @import "bootstrap/tables";
 @import "bootstrap/scaffolding";
 @import "bootstrap-custom/type"; // Custom
 @import "boostrap-flexbox-grid/bootstrap-grid-flexbox"; // https://github.com/ngengs/bootstrap-grid-flexbox
 @import "bootstrap-custom/forms";
 @import "bootstrap-custom/buttons";  // Custom
 
-
 // Components
-// @import "bootstrap/component-animations";
-// @import "bootstrap/navs";
-// @import "bootstrap/breadcrumbs";
-// @import "bootstrap/labels";
-// @import "bootstrap/badges";
-// @import "bootstrap/jumbotron";
-// @import "bootstrap/thumbnails"; 
-// @import "bootstrap/alerts";
-// @import "bootstrap/progress-bars";
-// @import "bootstrap/media";
-// @import "bootstrap/list-group";
-// @import "bootstrap/panels";
-// @import "bootstrap/responsive-embed";
-// @import "bootstrap/wells";
-// @import "bootstrap/close";
-
 @import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
 @import "bootstrap/input-groups";
@@ -70,15 +48,8 @@
 @import "components-custom/slick";
 @import "components-custom/panel_navigation";
 @import "components-custom/course-info";
-@import "components-custom/colour-theme";
-
-
-// Components w/ JavaScript
-// @import "bootstrap/modals";
-// @import "bootstrap/tooltip";
-// @import "bootstrap/popovers";
-@import "bootstrap-custom/carousel";
-
+@import "components-custom/colour-theme"; 
+ 
 // Utility classes 
 @import "bootstrap-custom/utilities";  // Custom
 @import "bootstrap/responsive-utilities";
