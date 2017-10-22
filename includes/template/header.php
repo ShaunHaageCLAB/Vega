@@ -4,7 +4,7 @@
 		<div class="navbar-brand-wrapper">
 			<a class="navbar-brand" href="/">
 				<video autoplay class="navbar-brand-logo ">
-					<source src="img/vega-logo-1.mp4" type="video/mp4">
+					<source src="img/vega-logo-3.mp4" type="video/mp4">
 				</video>
 			</a>
 		</div>

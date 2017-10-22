@@ -137,6 +137,12 @@ mark,
 .text-lowercase      { text-transform: lowercase; }
 .text-uppercase      { text-transform: uppercase; }
 .text-capitalize     { text-transform: capitalize; }
+.text-decoration-none { 
+	text-decoration: none; 
+	&:hover {
+		text-decoration: none; 
+	}
+}
 
 // Contextual colors
 .text-muted {
@@ -148,6 +154,15 @@ mark,
 }
 .text-yellow {
 	color: #fde13c;
+}
+.text-green {
+	color: $green;
+}
+.text-orange {
+	color: $orange;
+}
+.text-magenta {
+	color: $magenta;
 }
 
 .text-color-primary {

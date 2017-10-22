@@ -1,17 +1,14 @@
-<p class="baseline-sm">
-	<a href="#" class="btn btn-orange block btn-lg">Enquire Now</a>
+<p class="baseline-xs">
+	<a href="#" class="btn-course-info2 btn block btn-lg">Download Fact Sheet</a>
 </p>
 
-<div class="row">
-	<a href="#" class="col-lg-6 col-md-6 col-sm-6 btn btn-teal block btn-md baseline-sm">Apply</a>
-	<a href="#" class="col-lg-6 col-md-6 col-sm-6 btn btn-teal block btn-md baseline-sm">Fact Sheet</a>
-</div>
-
-
 <div class="panel__wrapper">
-	<h2 class="panel__title">Course Information</h2>
+	<div class="panel__tabs-wrapper">
+		<a href="#" class="js-tab / btn-course-tab / btn btn-md / is-active" data-tab="panel1">Full Time</a>
+		<a href="#" class="js-tab / btn-course-tab / btn btn-md" data-tab="panel2">Part Time</a>
+	</div>	
 
-	<div class="panel__content">
+	<div data-panel="panel1" class="panel__content / is-active">
 		<h3 class="panel__sub-title">Course Type</h3>
 		<p>Undergraduate</p>
 
@@ -28,6 +25,15 @@
 			<li>Some More information</li>
 			<li>Some More information</li>
 		</ul>
+
+	</div>
+
+	<div data-panel="panel2" class="panel__content">
+		<h3 class="panel__sub-title">Course Type</h3>
+		<p>Undergraduate</p>
+
+		<h3 class="panel__sub-title">Duration</h3>
+		<p>4 years</p>
 
 	</div>
 </div>

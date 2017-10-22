@@ -175,6 +175,21 @@ var VEGA = {
 			return false; 
 		});
 
+		// Tabs
+		// -----------------------------------------------------------
+		$cache.body.on('click', '.js-tab', function() {
+			var $el = $(this),
+				data = $el.data();
+			
+			$('[data-panel=' + data.tab + ']').addClass('is-active')
+				.siblings('[data-panel]').removeClass('is-active');
+
+			$el.addClass('is-active')
+				.siblings('[data-tab]').removeClass('is-active');
+
+			return false;
+		});
+
 
 
 		// Toggle Navigation menu for mobile and Tablet portrait
@@ -191,6 +206,7 @@ var VEGA = {
 			$cache.body.toggleClass('has-search-active');
 			return false;
 		});
+
 		
 
 		// Back to top

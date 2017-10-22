@@ -229,24 +229,33 @@
 	text-align: center;
 }
 
-.specialisations__icon {
+.specialisations__icon, 
+.specialisations__icon-color {
 	display: inline-block;
 	width: 100px;
 	height: 100px;
-	background: url('../img/sprite_specialisations.png');
-	background-size: 400px 300px;
-	margin-bottom: 3vh;
 
 	@media (max-width: $screen-xs-max) { 
 		transform: scale(.6);
 		margin-bottom: 0;
-	}	
+	}
+}
+
+.specialisations__icon {
+	background: url('../img/sprite_specialisations.png');
+	background-size: 400px 300px;
+	margin-bottom: 3vh;
+}
+.specialisations__icon-color {
+	background: url('../img/sprite_specialisations-color.png');
+	background-size: 400px 100px;
+	margin-bottom: 10px;
 }
 
 .specialisations__title {
 	display: block;
 	text-transform: uppercase;
-	color: $white;
+	@extend .h5;
 }
 
 
@@ -263,6 +272,12 @@ $sprite-y : 100px;
 .sprite_brand_communication {	background-position: $sprite-x * -3 $sprite-y * -1;}
 .sprite_photography {		background-position: $sprite-x * -0 $sprite-y * -2;}
 .sprite_brand_management {	background-position: $sprite-x * -01 $sprite-y * -2;}
+
+
+.sprite_copywriting-color {		background-position: $sprite-x * -1 $sprite-y * -0;}
+.sprite_game_design-color {		background-position: $sprite-x * -2 $sprite-y * -0;}
+.sprite_multimedia-color {		background-position: $sprite-x * -0 $sprite-y * -0;}
+.sprite_interior_design-color {	background-position: $sprite-x * -3 $sprite-y * -0;}
 
 
 
