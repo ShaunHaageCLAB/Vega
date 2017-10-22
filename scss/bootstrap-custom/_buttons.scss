@@ -95,10 +95,22 @@ a.btn {
 		color: $white;
 	}	
 }
+.btn-magenta {
+	@include button-variant($white, $magenta, $white);	
+	&:visited {
+		color: $white;
+	}	
+}
 .btn-orange {
 	@include button-variant($white, $orange, $white);	
 	&:visited {
 		color: $white;
+	}
+}
+.btn-yellow {
+	@include button-variant($orange, $pale-yellow, $orange);	
+	&:visited {
+		color: $orange;
 	}	
 }
 .btn-magenta {

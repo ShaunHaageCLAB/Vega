@@ -1,8 +1,9 @@
 $panel-padding: 12px 24px;
 
 .panel__wrapper {
-	background-color: $gray;
+	background-color: $gray-dark;
 	@extend  .baseline-sm;
+	color: $white;
 }
 
 	.panel__title {
@@ -17,12 +18,24 @@ $panel-padding: 12px 24px;
 		.panel__content {
 			padding: $panel-padding;
 			padding-bottom: 0;
-			overflow: hidden;
+		}
+		
+		.js {
+			.panel__content {
+				overflow: hidden;
+				max-height: 0;
+	
+				&.is-active {
+					max-height: 400px;
+					overflow: auto;
+				}
+			}
 		}
 
 			.panel__sub-title {				
 				@extend .h5;
 				text-transform: uppercase;
+				color: $white;
 			}
 
 

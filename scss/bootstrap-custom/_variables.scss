@@ -12,7 +12,7 @@ $transition : cubic-bezier(0.445, 0.050, 0.550, 0.950);
 $black :		#000000;
 $gray-base:     #555555 !default;
 $gray-darker:   #474747 !default;
-$gray-dark:         	#e9e9e9 !default;
+$gray-dark:         	#959595 !default;
 $gray:              	#f4f4f4 !default;
 $gray-light:        	#f4f4f4 !default;
 $gray-lighter:      	#f4f4f4 !default;
@@ -20,6 +20,7 @@ $gray-lighter:      	#f4f4f4 !default;
 
 $red : 		#eb1c23;
 $orange : 	#da511f;
+$orange : 	#e9631b;
 $teal : 	#208fa5;
 $yellow : 	#fcb016;
 $green: 	#378d5f;
@@ -32,7 +33,8 @@ $dark-yellow : 	darken($yellow, 10%);
 $dark-green: 	darken($green, 10%);
 $dark-magenta: 	darken($magenta, 10%);
 
-$pale-yellow: 	#ffe02d;
+$pale-yellow: 	#fbdf77;
+$pale-red: 		#f5c6c8;
 $pale-teal: 	#e8fbff;
 
 $brand-primary:         $red !default; 
@@ -395,7 +397,7 @@ $container-lg:                 $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-$header-height:                    275px !default; 
+$header-height:                    255px !default; 
 $header-height-reduced:            155px !default; 
 $navbar-height:                    55px !default; 
 $navbar-height-mobile:             60px !default; 
@@ -411,7 +413,7 @@ $navbar-default-border:            $white !default;
 
 // Navbar links
 $navbar-default-link-color:                #777 !default;
-$navbar-default-link-bg:                	$gray-dark !default;
+$navbar-default-link-bg:                	$gray !default;
 $navbar-default-link-hover-color:          auto !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         $white !default;

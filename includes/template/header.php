@@ -3,7 +3,9 @@
 	<div class="andrew_fairlie">
 		<div class="navbar-brand-wrapper">
 			<a class="navbar-brand" href="/">
-				<img src="img/logo_vega.png" alt="Vega Logo" class="navbar-brand-logo">
+				<video autoplay class="navbar-brand-logo ">
+					<source src="img/vega-logo-3.mp4" type="video/mp4">
+				</video>
 			</a>
 		</div>
 		

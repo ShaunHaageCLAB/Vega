@@ -1,0 +1,48 @@
+@mixin color-theme($theme-name, $color-primary, $color-hover, $color-secondary) { 
+	
+	.theme-#{$theme-name} {
+				
+		.accordion__link {
+			background-color: $color-primary;
+			&:hover {
+				background-color: $color-hover;
+			}
+		}
+	
+		.is-active .accordion__link { 
+			background: $gray-darker;
+		}
+	
+		.accordion__panel {
+			background-color: $color-secondary;		
+		} 
+	
+		.btn-course-info {
+			@include button-variant($white, $color-primary, $white);	
+			&:visited {
+				color: $white;
+			}
+		}
+		
+		.btn-course-info2 {
+			@include button-variant($color-primary, $color-secondary, $color-primary);	
+			&:visited {
+				color: $color-primary;
+			}		
+		}
+	
+		.btn-course-tab {
+			@include button-variant($white, $color-primary, $white);
+			&.is-active,
+			&.is-active:active {
+				background-color: $gray-dark;
+				color: $white;
+			}		
+		}
+	} 
+} 
+
+@include color-theme('orange', 	$orange, 	$dark-orange, 	$pale-yellow);
+@include color-theme('magenta', $magenta, 	$dark-magenta, 	$pale-yellow);
+@include color-theme('green',	$green, 	$dark-green, 	$pale-yellow);
+@include color-theme('teal', 	$teal, 	 	$dark-teal, 	$pale-yellow);

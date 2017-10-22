@@ -1,20 +1,20 @@
-$accordion-padding: 12px;
+$accordion-padding: 25px;
 
 .accordion__menu {}
 
 	.accordion__item {}
 
 		.accordion__link {
-			background-color: $orange;
+			background-color: $black;
 			display: flex;
 			&:visited {
 				color: $white;
 			}
 			&:hover {
-				background-color: $dark-orange;
+				background-color: $gray-darker;
 			}
 			.is-active & {
-				background: $teal;
+				background: $gray-darker; 
 			}
 		}
 
@@ -29,7 +29,9 @@ $accordion-padding: 12px;
 			.accordion__icon {
 				@include fa-icon();
 				font-size: 24px;
-				padding: 7px $accordion-padding 0 0;
+				padding: 22px $accordion-padding 0 0;
+				color: $white;
+				
 				&:before {
 					content: $fa-var-plus-circle;
 				}
@@ -40,16 +42,19 @@ $accordion-padding: 12px;
 		
 		.accordion__panel {
 			padding: 0 $accordion-padding;
-			background-color: $pale-teal;
-			margin-bottom: $accordion-padding;
-			
-			max-height: 0;
-			overflow: hidden;
-			transition: all 200ms $transition;
+			margin-bottom: 10px;		
 
 			.is-active & {
 				max-height: 50vh;
 				padding: $accordion-padding;
 				overflow-y: auto;
+			}
+		}
+
+		.js {
+			.accordion__panel {
+				max-height: 0;
+				overflow: hidden;
+				transition: all 200ms $transition;
 			}
 		}
