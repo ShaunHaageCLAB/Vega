@@ -162,7 +162,8 @@ input[type=password], input[type=text], input[type=file], textarea, .ms-inputBox
 // Reset height for `textarea`s
 textarea.form-control {
   height: auto;
-}
+  resize: vertical; 
+} 
 
 
 // Search inputs in iOS
