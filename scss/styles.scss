@@ -25,7 +25,7 @@
 // Components
 @import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
-@import "bootstrap/input-groups";
+@import "bootstrap-custom/input-groups";
 @import "bootstrap-custom/navbar"; // Custom
 @media (min-width: $grid-float-breakpoint) {
 	@import "bootstrap-custom/navbar-desktop"; // Custom
