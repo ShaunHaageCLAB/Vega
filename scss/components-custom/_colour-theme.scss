@@ -17,14 +17,16 @@
 			background-color: $color-secondary;		
 		} 
 	
-		.btn-course-info {
-			@include button-variant($white, $color-primary, $white);	
+		.btn-course-info
+		 {
+			@include button-variant($color-secondary, $color-primary, $color-secondary);	
 			&:visited {
-				color: $white;
+				color: $color-secondary;
 			}
 		}
 		
-		.btn-course-info2 {
+		.btn-course-info2,
+		.btn-primary {
 			@include button-variant($color-primary, $color-secondary, $color-primary);	
 			&:visited {
 				color: $color-primary;
@@ -38,6 +40,21 @@
 				background-color: $gray-dark;
 				color: $white;
 			}		
+		}
+
+
+		// Contact Page
+		.contactdetails__wrapper {
+			background-color: $color-primary;
+			color: $white;
+
+			.fa {
+				color: $color-secondary;
+			}
+
+			a, a:visited {
+				color: $white;
+			}
 		}
 	} 
 } 
