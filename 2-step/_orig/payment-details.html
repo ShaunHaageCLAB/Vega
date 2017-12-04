@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Online Reg</title>
+        <script src="https://use.typekit.net/deh5guz.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://use.fontawesome.com/be1c81d4a8.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <main class="body">
+            <header class="primary-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            <div class="vc-logo">
+                                <a href="/">
+                                    <img src="img/vc-logo.png" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="main-content">
+                <div class="container hero-container">
+                    <div class="row">
+                        <div class="no-padding">
+                            <div class="col-md-12">
+                                <img alt="Banner" src="img/VC_Sharepoint_Banner.jpg" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container section-container">
+                    <div class="row">
+        				<div class="pd-0">
+        					<div class="col-md-12">
+                                <h1 class="heading1">2018 registration contract</h1>
+        					</div>
+        				</div>
+        			</div>
+                    <div class="row hide">
+        				<div class="pd-0">
+        					<div class="col-md-12">
+                                <h2 class="heading2">SECTION 3: STUDENT/PERSONAL INFORMATION</h1>
+        					</div>
+        				</div>
+        			</div>
+                    <div class="pd-15">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="sidebar-nav">
+                                    <ul class="nav nav-pills nav-stacked">
+                                      <li role="presentation" class="completed"><a href="#">Qualification Information</a></li>
+                                      <li role="presentation" class="completed"><a href="#">Personal Information &amp; Education History</a></li>
+                                      <li role="presentation" class="completed"><a href="#">Account Payer</a></li>
+                                      <li role="presentation" class="active"><a href="#">Payment Details</a></li>
+                                      <li role="presentation"><a href="#">Emergency Contact Details</a></li>
+                                      <li role="presentation"><a href="#">Bursaries</a></li>
+                                      <li role="presentation"><a href="#">Regsitration Document Requirements</a></li>
+                                      <li role="presentation"><a href="#">Submit your 2018 Online Registration Contract</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="col-md-9">
+                                <div class="reg-form form-horizontal">
+
+                                    (See 6-2.html)
+
+                                     <div class="form-group reg-buttons">
+                                         <div class="col-sm-6">
+                                             <span class="reg-note">* Mandatory Fields</span>
+                                         </div>
+                                         <div class="col-sm-6 text-right">
+                                             <button type="button" class="btn btn-success btn-previous">Previous</button>
+                                             <a href="emergency-contact.html" class="btn btn-success btn-next">Next</a>
+                                         </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+        <div class="modal fade reg-modal" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="reg-modal-Label">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header reg-title text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Short Learning Programmes
+              </div>
+              <div class="modal-body">
+                <div class="panel">
+                  <div class="panel-head">
+                    <h3 class="reg-subtitle text-center">Registraton</h3>
+                  </div>
+                  <div class="panel-body reg-panel-fw">
+                      <div class="form-group">
+                          <label for="regform_field_fieldID" class="col-sm-7 control-label text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id.</label>
+                          <div class="col-sm-5">
+                              <div class="btn-reg-select">
+                              <select class="form-control">
+                                <option>1</option>
+                                <option>5</option>
+                              </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loading-modal">
+            <div class="icon-loading">
+            <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only-">Loading...</span>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('.btn-next').click(function(event) {
+                    $('.loading-modal').show();
+                });
+            });
+        </script>
+    </body>
+</html>
