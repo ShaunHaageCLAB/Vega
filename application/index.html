@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style media="screen">
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+        *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body {
+            font-family: Montserrat;
+            font-weight: 400;
+            font-size: 14px;
+            color: #58585a;
+        }
+        h1 {
+            font-weight: 700;
+
+            color: #208da5;
+            font-size: 36px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+        h3 {
+            text-transform: uppercase;
+            font-size: 16px;
+            margin-bottom:20px;
+            font-weight: 700;
+        }
+        fieldset {
+            margin-bottom: 40px;
+        }
+        legend {
+            font-weight: 400;
+            background-color:#208da5;
+            color: #fff;
+            margin-bottom: 40px;
+            font-size:16px;
+            line-height: 1.42857;
+            padding:8px 12px;
+        }
+        label {
+            height: 50px !important;
+            padding: 10px 20px !important;
+        }
+        input[type=text] {
+            background-color: #f4f4f4;
+            border: 2px solid #a8a8a8;
+            border-radius: 0px;
+            height: 50px;
+            padding: 10px 20px;
+            text-transform:uppercase;
+            font-size:12px;
+            line-height: 1.42857;
+            color: #a8a8a8;
+        }
+        select.form-control {
+            background-color: #f4f4f4;
+            border: 2px solid #a8a8a8;
+            border-radius: 0px !important;
+            height: 50px;
+            padding: 10px 20px;
+            text-transform:uppercase;
+            font-size:12px;
+            line-height: 1.42857;
+            color: #a8a8a8;
+        }
+
+        input[type=password]::-webkit-input-placeholder,
+        input[type=text]::-webkit-input-placeholder,
+        input[type=file]::-webkit-input-placeholder{text-transform:uppercase;font-size:12px}
+        input[type=password]::-moz-input-placeholder,
+        input[type=text]::-moz-input-placeholder,
+        input[type=file]::-moz-input-placeholder{text-transform:uppercase;font-size:12px}
+        input[type=password]::-ms-input-placeholder,
+        input[type=text]::-ms-input-placeholder,
+        input[type=file]::-ms-input-placeholder{text-transform:uppercase;font-size:12px}
+        input[type=password]:-moz-input-placeholder,
+        input[type=text]:-moz-input-placeholder,
+        input[type=file]:-moz-input-placeholder{text-transform:uppercase;font-size:12px}
+
+        .sub-title {
+            text-transform: uppercase;
+            color: #208da5;
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            padding-bottom:20px;
+            margin-top: 10px
+        }
+
+        .header {
+            background: url(img/app_bg.png) no-repeat 100% 0;
+            background-size: cover;
+            background-size: 50% auto;
+
+        }
+        .header h1 {
+            width: 480px;
+        }
+        .offset-border-bottom {
+            position: relative;
+        }
+        .offset-border-bottom::after {
+            height: 10px;
+            display: block;
+            background-color: #208da5;
+            width: 70%;
+            content: '';
+        }
+        .form-group .control-label {
+            text-align: left;
+        }
+        .btn-vega-default {
+            margin: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            border-radius: 0px;
+            border: none;
+            padding: 26px 60px;
+            -webkit-transition: all 300ms ease;
+        }
+        .btn-vega-default:hover {
+            -webkit-transition: all 300ms ease;
+            /*padding: 30px 64px;*/
+        }
+        .btn-teal {
+            background-color: #2190a6;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .btn-teal:hover {
+            background-color: #1A6A7A;
+        }
+        .btn-vega-default::after {
+            border: 4px solid #000;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: '';
+            z-index: -1;
+            -webkit-transition: all 300ms ease;
+        }
+        .btn-vega-default:hover::after {
+            -webkit-transition: all 300ms ease;
+        }
+        .btn-drop-left::after {
+            top: 8px;
+            left: 8px;
+        }
+        .btn-drop-left:hover::after {
+            top: 0px;
+            left: 0px;
+            background-color: #000;
+        }
+        .btn-drop-right::after {
+            top: 8px;
+            right: 8px;
+        }
+        .btn-drop-right:hover::after {
+
+            background-color: #000;
+        }
+        .control-xs {
+            width: 18%;
+        }
+        .account-details {
+            margin-top: 40px;
+        }
+        </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div class="container">
+      <form class="form-horizontal">
+
+        <div class="header">
+          <h1 class="offset-border-bottom">Application Form <span class="sub-title">
+              Application for Admission to <strong>FULL-TIME + PART-TIME</strong> programmes.
+          </span></h1>
+
+        </div>
+        <div class="fieldset">
+
+
+        <fieldset class="section">
+            <legend>APPLICANT INFORMATION</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">First year of study*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Campus*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Qualification*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Qualification Type*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">What prompted you to apply at Vega?</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+        <fieldset class="section">
+            <legend>STUDENT DETAILS</legend>
+
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Title*</label>
+              <div class="col-sm-8">
+                  <select class="form-control control-xs" name="">
+                    <option value="">Please Select</option>
+                  </select>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">First  Names*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Surname*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Gender*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Race*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Home Language*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Personal Challenges (e.g. Dyslexia, ADHD etc.)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder='If "YES" please specify'>
+              </div>
+            </div>
+        </fieldset>
+        <fieldset class="section">
+            <legend>RESIDENCY STATUS</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Nationality*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">South African ID Number*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+            <p class="col-sm-offset-4 col-sm-8 text-uppercase">
+                <strong>Foreign Students only:</strong>
+            </p>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Alternate ID type</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Alternate ID Epiry Date</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Alternate ID Number*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+        <fieldset class="section">
+            <legend>CONTACT DETAILS</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Home Address*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Suburb*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Postal Code*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control control-xs" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Province*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Cell Number*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Tel (Home)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Email</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+        <!--
+        </div>
+        <div class="fieldset">
+        -->
+        <fieldset class="section">
+            <legend>EDUCATION</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">High School*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Completion Year*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Other Tertiary Information (If applicable)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Name of Tertiary Institution (If applicable)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">National Benchmark Test (NBT) ref no*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+        <!--
+        </div>
+        <div class="fieldset">
+        -->
+
+        <fieldset class="section">
+            <legend>CONTACT DETAILS</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Home Address*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Suburb*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Postal Code*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control control-xs" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Province*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Cell Number*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Tel (Home)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Email*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+        <fieldset class="section">
+            <legend>PARENT / LEGAL GUARDIAN / NEXT OF KIN CONTACT DETAILS</legend>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Surname*:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Title*:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">First Name*:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Relationship to Student*:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Home Address*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Home Address*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Suburb*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Postal Code*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Province*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country*</label>
+              <div class="col-sm-8">
+                  <select class="form-control" name="">
+                    <option value="">Please Select</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Cell Number*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Tel (Home)</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Tel (Work):</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Email*:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+        </fieldset>
+
+        </div>
+        <div class="fieldset">
+            <fieldset class="section">
+                <legend>Submit your Application</legend>
+
+            </fieldset>
+        </div>
+        <div class="fieldset">
+        <fieldset class="section">
+            <legend>PAYMENT - Pay your R950 non-refundable Application Fee</legend>
+
+            <p>THANK YOU FOR YOUR INTEREST IN STUDYING AT VEGA.</p>
+
+            <p>Please note that in order to complete and process your Pending Admission, a non-refundable fee of R 950 is required - payable online or through EFT.</p>
+
+            <p>Once payment has been made a student advisor will then contact you to complete the pending admission process.</p>
+
+            <p>Should you wish to pay via EFT please send your proof of payment to your campus:</p>
+
+            <div class="row account-details">
+                <div class="col-sm-3">
+                    <h3>JOHANNESBURG</h3>
+                    <p><strong>Account Name:</strong><br>
+                    The Independent Institute of Education</p>
+                    <p><strong>Bank:</strong> ABSA</p>
+                    <p><strong>Account Number:</strong> 4052306991</p>
+                    <p><strong>Branch Code:</strong> 331155</p>
+                    <p><strong>Fax:</strong> 086 515 7278</p>
+                    <p><strong>Email:</strong> jhb@vegaschool.com</p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>PRETORIA</h3>
+                    <p><strong>Account Name:</strong><br>
+                    The Independent Institute of Education</p>
+                    <p><strong>Bank:</strong> ABSA</p>
+                    <p><strong>Account Number:</strong> 4069282601</p>
+                    <p><strong>Branch Code:</strong> 331155</p>
+                    <p><strong>Fax:</strong> 086 595 9082</p>
+                    <p><strong>Email:</strong> pta@vegaschool.com</p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>DURBAN</h3>
+                    <p><strong>Account Name:</strong><br>
+                    The Independent Institute of Education</p>
+                    <p><strong>Bank:</strong> ABSA</p>
+                    <p><strong>Account Number:</strong> 4056904652</p>
+                    <p><strong>Branch Code:</strong> 331155</p>
+                    <p><strong>Fax:</strong> 086 548 8556</p>
+                    <p><strong>Email:</strong> dbn@vegaschool.com</p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>CAPE TOWN</h3>
+                    <p><strong>Account Name:</strong><br>
+                    The Independent Institute of Education</p>
+                    <p><strong>Bank:</strong> ABSA</p>
+                    <p><strong>Account Number:</strong> 4060958043</p>
+                    <p><strong>Branch Code:</strong> 331155</p>
+                    <p><strong>Fax:</strong> 086 583 9028</p>
+                    <p><strong>Email:</strong> ct@vegaschool.com</p>
+                </div>
+            </div>
+            <div class="form-group text-right">
+            <a class="btn btn-success btn-vega-default btn-teal btn-drop-right">Pay Later</a>
+            <a class="btn btn-success btn-vega-default btn-teal btn-drop-right">Pay Now</a>
+            </div>
+        </fieldset>
+        </div>
+      </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+    <script>
+        $(function(){
+            var fieldLen = $('.fieldset').length;
+            $('.fieldset').each(function(index, el) {
+                if( index != 0 ) {
+                    $(this).addClass('hide');
+                }
+                var panelCtr = index + 1;
+                $(this).addClass('panel-' + index ).attr('data-nextpanel', panelCtr);
+                if ( fieldLen != panelCtr ){
+                $('<div class="form-group text-right"><a href="#" class="btn btn-success btn-vega-default btn-teal btn-drop-right btn-next btn-next-' + index + '">Next</a></div>').appendTo(this);
+            }
+            });
+            $('.btn-next').on('click', function(e) {
+                e.preventDefault();
+                var nextPanel = $(this).parent().parent().data('nextpanel');
+                $(this).parent().parent().hide();
+                $('.panel-' + nextPanel).toggleClass('hide');
+            });
+        });
+    </script>
+
+
+  </body>
+</html>
