@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vega - Homepage</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="site-content">
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+	<div class="section-name"></div>
+</main>
+
+<script src="jquery-2.2.4.js"></script>
+<script src="jquery.scrollify.js"></script>
+<script>
+	$(document).ready(function () {
+		$.scrollify({
+			section: ".section-name",
+			sectionName: "section-name",
+			interstitialSection: "",
+			easing: "easeOutExpo",
+			scrollSpeed: 1100,
+			offset: 0,
+			scrollbars: true,
+			standardScrollElements: "",
+			setHeights: true,
+			overflowScroll: true,
+			updateHash: true,
+			touchScroll: true,
+			before: function () {
+				console.log('goodbye');
+			 },
+			after: function () {
+				
+				console.log('hello');
+			 },
+			afterResize: function () { },
+			afterRender: function () { }			
+		});			
+	});
+</script>
+</body>
+</html>

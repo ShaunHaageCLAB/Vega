@@ -1,0 +1,27 @@
+body {
+	margin: 0;
+}
+
+.section-name {
+	background: yellow;
+	height: 100vh;
+}
+
+.section-name:nth-of-type(2) {
+	background: green;
+}
+.section-name:nth-of-type(3) {
+	background: purple;
+}
+.section-name:nth-of-type(4) {
+	background: teal;
+}
+.section-name:nth-of-type(5) {
+	background: red;
+}
+.section-name:nth-of-type(6) {
+	background: indigo;
+}
+.section-name:nth-of-type(6) {
+	background: brown;
+}
